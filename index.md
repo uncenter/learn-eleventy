@@ -3,16 +3,19 @@ title: "Intro"
 panel: false
 ---
 
-Welcome to **Eleventy Notes**, an opinionated template for publishing your personal notes, documentation or even your blog. It's built with [Eleventy](https://www.11ty.dev/), a powerful static site generator.
+This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
+It is now maintained by [uncenter](https://github.com/uncenter/).
 
-Eleventy Notes has many great features you'll love:
+## Contributing
 
-- ✅ [[Wikilinks]] and backlinks
-- ✅ Support for [[Tags]]
-- ✅ A fast [[Search|client-side search]]
-- ✅ Two [[Themes]] and multiple color schemes to choose from
-- ✅ A customizable [[Sidebar]] with support for folders
-- ✅ Lightweight and fast, with minimal JavaScript
-- ... and much more!
+Content changes should ideally first be raised as issues where they can be discussed. Small corrections can be made directly in a pull request.
 
-Start using Eleventy Notes by reading the [[Getting started]] guide.
+## Licence (MIT Licence)
+
+Copyright 2020 Andy Bell
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

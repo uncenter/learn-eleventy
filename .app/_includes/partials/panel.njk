@@ -36,7 +36,7 @@
 
     {% set links = collections._links[page.url]() %}
 
-    {% if links.incoming | length %}
+    {# {% if links.incoming | length %}
         <div class="grouped-links">
             <h2 class="grouped-links__label" id="app-panel-incoming">Incoming</h2>
             <ul class="grouped-links__list" aria-labelledby="app-panel-incoming">
@@ -66,7 +66,7 @@
                 {% endfor %}
             </ul>
         </div>
-    {% endif %}
+    {% endif %} #}
     <div class="grouped-links">
         <h2 class="grouped-links__label" id="app-panel-incoming">Resources</h2>
         <ul class="grouped-links__list" aria-labelledby="app-panel-incoming">

@@ -1,21 +1,27 @@
 ---
-title: 'Intro'
-panel: false
+title: 'Getting started'
 ---
 
-This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
-This fork is now maintained by [uncenter](https://github.com/uncenter/).
+Welcome to Learn Eleventy! This course is designed to give you a really solid understanding of [Eleventy](https://www.11ty.dev/)—even if you’ve never used it before. Over the course of **31 lessons**, you’ll start with a completely empty directory and finish with a fancy, fully-fledged website.
 
-## Contributing
+Not only will you have solid skills in Eleventy at the end of this course—you’ll also have skills in semantic HTML, progressive CSS, user experience, accessibility, progressive enhancement and performance. It’s an all-in-one course on building an awesome website!
 
-Content changes should ideally first be raised as issues where they can be discussed. Small corrections can be made directly in a pull request.
+In fact, why explain what we’re building when I can just show you?
 
-## Licence (MIT Licence)
+<a href="https://issue33.com">View the demo!</a>
 
-Copyright 2020 Andy Bell
+Pretty neat, huh?
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Before we dive in, let's take a quick tour of how to use and navigate this site:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+- On the left panel, you'll find a navigation menu that allows you to jump to any lesson in the course. At any time, you can press [[Alt]] + [[F]] ([[⌥]] + [[F]] on MacOS) to open the search menu and search for a lesson by name or content.
+- Each lesson is divided into sections and you can navigate to a specific section by clicking on the section title in the table of contents on the right panel.
+- The panel on the right also contains a few other things:
+  - A resources section, which contains useful links for all the tools and resources used in the course.
+  - An "edit this page" button, which allows you to edit the content of the current lesson on GitHub.
+  - And finally, you can bookmark any lesson by pressing the bookmark icon to save it for later.
+- If you ever get lost or want to go back to a previous lesson, you can use the "Previous" and "Next" links at the bottom of each lesson.
+- Don't forget that you can always refer back to the demo site for inspiration or guidance as you work through the lessons.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Ready? Let's get started!
+Head over to the [first lesson](/lesson/1/) to get started.

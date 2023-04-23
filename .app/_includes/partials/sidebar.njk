@@ -58,12 +58,12 @@
 
     <template x-if="$store.favorites.items.length">
         <nav aria-labelledby="app:sidebar:section:favorites" class="nav-section">
-            <h3 id="app:sidebar:section:favorites" class="nav-section__title">Favorites</h3>
+            <h3 id="app:sidebar:section:favorites" class="nav-section__title">Bookmarks</h3>
             <ul class="nav-list" aria-labelledby="app:sidebar:section:favorites">
                 <template x-for="fav in $store.favorites.items">
                     <li>
                         <a :href="fav" class="nav-list__link">
-                            {{ 'file-text' | featherRef | safe }}
+                            {{ 'link-2' | feather | safe }}
                             <span x-text="$store.favorites.index[fav] || fav"></span>
                         </a>
                     </li>

@@ -1,7 +1,7 @@
 {
 	"$schema": ".app/app.schema.json",
 	"title": "Learn Eleventy",
-	"description": "Your up-to-date guide to Eleventy",
+	"description": "The best way to learn Eleventy is to build something with it.",
 	"editThisNote": {
 		"url": "https://github.com/uncenter/learn-eleventy/edit/{{branch}}/{{file}}"
 	},

@@ -52,4 +52,30 @@ panel: true
       :aria-live="$store.announce.ariaLive"
     ></div>
     </body>
+    <script>
+        const ICON_CLIPBOARD_COPY = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+        const ICON_CLIPBOARD_CHECK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+        const blocks = document.querySelectorAll('pre')
+        blocks.forEach((block) => {
+            const copyButton = document.createElement('button');
+            copyButton
+                .classList
+                .add('code__copy-button')
+            copyButton.innerHTML = ICON_CLIPBOARD_COPY
+
+            copyButton.addEventListener('click', () => {
+                navigator
+                    .clipboard
+                    .writeText(block.querySelector('code').textContent);
+                copyButton.innerHTML = ICON_CLIPBOARD_CHECK
+                copyButton.style.color = '#2bbd50'
+                setTimeout(() => {
+                    copyButton.innerHTML = ICON_CLIPBOARD_COPY
+                    copyButton.style.color = '#a1a1aa'
+                }, 2000);
+            });
+            block.appendChild(copyButton);
+        });
+    </script>
 </html>

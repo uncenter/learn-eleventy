@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg width="329px" height="182px" viewBox="0 0 329 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>pagination-1</title>
-    <g id="pagination-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#FFFEFC" x="0" y="0" width="329" height="182"></rect>
         <path d="M89.5,37.5 L10.5,37.5 L10.5,150.5 L89.5,150.5 L89.5,37.5 Z" id="Path" stroke="#191D27" fill="#FFF6E5"></path>
         <path d="M317.5,12.5 L238.5,12.5 L238.5,61.5 L317.5,61.5 L317.5,12.5 Z" id="Path-Copy-2" stroke="#191D27" fill="#FFF6E5"></path>

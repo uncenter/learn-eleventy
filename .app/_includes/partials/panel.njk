@@ -67,6 +67,23 @@
             </ul>
         </div>
     {% endif %}
+    <div class="grouped-links">
+        <h2 class="grouped-links__label" id="app-panel-incoming">Resources</h2>
+        <ul class="grouped-links__list" aria-labelledby="app-panel-incoming">
+            <li>
+                <a href="https://11ty.dev/docs" class="grouped-links__link">
+                    {{ 'external-link' | feather | safe }}
+                    <span>11ty Documentation</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.gg/GBkBy9u" class="grouped-links__link">
+                    {{ 'external-link' | feather | safe }}
+                    <span>11ty Discord</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <div class="inline">
         {{ favToggle(page.url | htmlBaseUrl ) }}

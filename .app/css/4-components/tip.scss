@@ -1,0 +1,18 @@
+div .tip {
+	background-color: #f3f5f7;
+	border-color: #42b983;
+	padding: 0.1rem 1.5rem;
+	border-left-width: 0.5rem;
+	border-left-style: solid;
+	margin: 1rem 0;
+}
+
+div .tip::before {
+	content: 'Tip';
+	display: block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #42b983;
+	margin-bottom: 0.5rem;
+}

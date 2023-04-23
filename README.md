@@ -7,6 +7,10 @@ This fork is now maintained by [uncenter](https://github.com/uncenter/).
 
 Content changes should ideally first be raised as issues where they can be discussed. Small corrections can be made directly in a pull request.
 
+## To do
+
+- [ ] [Lesson 5](/5.md): Uses passthrough copy to copy static images to the output folder. Consider switching to `eleventy-img`?
+
 ## Licence (MIT Licence)
 
 Copyright 2020 Andy Bell

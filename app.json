@@ -1,17 +1,17 @@
 {
-    "$schema": ".app/app.schema.json",
-    "title": "Learn Eleventy",
-    "description": "Your up-to-date guide to Eleventy",
-    "editThisNote": {
-        "url": "https://github.com/uncenter/learn-eleventy/edit/{{branch}}/{{file}}"
-    },
-    "sidebar": {
-        "links": [
-            {
-                "url": "https://github.com/uncenter/learn-eleventy",
-                "label": "GitHub",
-                "icon": "github"
-            }
-        ]
-    }
+	"$schema": ".app/app.schema.json",
+	"title": "Learn Eleventy",
+	"description": "Your up-to-date guide to Eleventy",
+	"editThisNote": {
+		"url": "https://github.com/uncenter/learn-eleventy/edit/{{branch}}/{{file}}"
+	},
+	"sidebar": {
+		"links": [
+			{
+				"url": "https://github.com/uncenter/learn-eleventy",
+				"label": "GitHub",
+				"icon": "github"
+			}
+		]
+	}
 }

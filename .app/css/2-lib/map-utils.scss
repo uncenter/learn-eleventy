@@ -1,11 +1,11 @@
-@use "sass:map";
+@use 'sass:map';
 
 @function merge-all($maps...) {
-  $collection: ();
+	$collection: ();
 
-  @each $map in $maps {
-    $collection: map.merge($collection, $map);
-  }
+	@each $map in $maps {
+		$collection: map.merge($collection, $map);
+	}
 
-  @return $collection;
+	@return $collection;
 }

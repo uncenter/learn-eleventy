@@ -1,7 +1,7 @@
-@use "./app" with (
-  $color: (
-    neutral: "olive",
-    primary: "grass",
-    on-primary: "#fff",
-  )
+@use './app' with (
+	$color: (
+		neutral: 'olive',
+		primary: 'grass',
+		on-primary: '#fff',
+	)
 );

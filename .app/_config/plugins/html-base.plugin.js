@@ -1,3 +1,3 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 
 module.exports = [EleventyHtmlBasePlugin];

@@ -1,17 +1,17 @@
-const fs = require("fs");
+const fs = require('fs');
 
 class DefaultIndex {
-  data() {
-    const hasCustomIndex = fs.existsSync("./../index.md");
-    return {
-      permalink: hasCustomIndex ? false : "/",
-      layout: "layouts/base.njk",
-      panel: false,
-    };
-  }
+	data() {
+		const hasCustomIndex = fs.existsSync('./../index.md');
+		return {
+			permalink: hasCustomIndex ? false : '/',
+			layout: 'layouts/base.njk',
+			panel: false,
+		};
+	}
 
-  render() {
-    return `
+	render() {
+		return `
       <main class="app-layout__main" id="app-content">
         <div class="page" data-panel="false">
           <div class="page__wrapper">
@@ -24,7 +24,7 @@ class DefaultIndex {
         </div>
       </main>
     `;
-  }
+	}
 }
 
 module.exports = DefaultIndex;

@@ -1,6 +1,6 @@
 {
-	"name": "eleventy-notes",
-	"version": "0.9.0",
+	"name": "learn-eleventy",
+	"version": "0.1.0",
 	"description": "",
 	"scripts": {
 		"spell": "cspell ../**/*.md",
@@ -10,9 +10,12 @@
 		"11ty:build": "npm run clean && eleventy",
 		"clean": "rimraf dist"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"keywords": [
+		"eleventy",
+		"learneleventyfromscratch"
+	],
+	"author": "uncenter",
+	"license": "MIT",
 	"cspell": {
 		"version": "0.2",
 		"language": "en",
@@ -114,6 +117,7 @@
 		"flexsearch": "^0.7.31",
 		"hotkeys-js": "^3.10.1",
 		"markdown-it-container": "^3.0.0",
+		"markdown-it-kbd": "^2.2.2",
 		"prism-themes": "^1.9.0"
 	}
 }

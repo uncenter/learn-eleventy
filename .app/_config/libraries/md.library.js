@@ -4,6 +4,7 @@ const markdownItTaskCheckbox = require('markdown-it-task-checkbox');
 const markdownItWikilinks = require('markdown-it-wikilinks');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownItContainer = require('markdown-it-container');
+const markdownItKbd = require('markdown-it-kbd');
 
 const glob = require('glob');
 const path = require('path');
@@ -62,7 +63,8 @@ module.exports = (eleventyConfig) => {
 				level: [1, 2, 3, 4],
 			}),
 		})
-		.use(markdownItContainer, 'tip');
+		.use(markdownItContainer, 'tip')
+		.use(markdownItKbd);
 
 	return lib;
 };

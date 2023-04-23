@@ -11,7 +11,7 @@ Content changes should ideally first be raised as issues where they can be discu
 
 - [ ] [Lesson 5](/5.md): Uses passthrough copy to copy static images to the output folder. Consider switching to `eleventy-img`?
 
-## Licence (MIT Licence)
+## License (MIT License)
 
 Copyright 2020 Andy Bell
 

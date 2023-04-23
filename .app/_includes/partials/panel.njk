@@ -1,0 +1,91 @@
+{% from 'macros/fav-toggle.njk' import favToggle %}
+{% from 'macros/edit-this-note.njk' import editThisNote %}
+
+<aside class="stack" data-stack="6">
+  {% set toc = content | toc %}
+  {% if toc | length %}
+  <div class="toc">
+    <h2 class="toc__label" id="app-panel-toc">Table of Contents</h2>
+    <ul class="toc__list" aria-labelledby="app-panel-toc">
+      {% for item in toc %}
+      <li style="--level: {{ item.level }}" class="toc__item">
+        <a href="#{{ item.id }}" class="toc__link">
+          {{ item.text | safe }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if tags | length %}
+  <div class="grouped-links">
+    <h2 class="grouped-links__label" id="app-panel-tags">Tags</h2>
+    <ul class="grouped-links__list" aria-labelledby="app-panel-tags">
+      {% for tag in tags %}
+      <li>
+        <a href="/tags/{{ tag | slugify }}/" class="grouped-links__link">
+          {{ 'hash' | featherRef | safe }}
+          <span>{{ tag }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% set links = collections._links[page.url]() %}
+
+  {% if links.incoming | length %}
+  <div class="grouped-links">
+    <h2 class="grouped-links__label" id="app-panel-incoming">Incoming</h2>
+    <ul class="grouped-links__list" aria-labelledby="app-panel-incoming">
+      {% for incoming in links.incoming %}
+        <li>
+          <a href="{{ incoming.url }}" class="grouped-links__link">
+            {{ 'arrow-left' | feather | safe }}
+            <span>{{ incoming.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if links.outgoing | length %}
+  <div class="grouped-links">
+    <h2 class="grouped-links__label" id="app-panel-outgoing">Outgoing</h2>
+    <ul class="grouped-links__list" aria-labelledby="app-panel-outgoing">
+      {% for outgoing in links.outgoing %}
+        <li>
+          <a href="{{ outgoing.url }}" class="grouped-links__link">
+            {{ 'arrow-right' | feather | safe }}
+            <span>{{ outgoing.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if links.external | length %}
+  <div class="grouped-links">
+    <h2 class="grouped-links__label" id="app-panel-external">External</h2>
+    <ul class="grouped-links__list" aria-labelledby="app-panel-external">
+      {% for external in links.external %}
+        <li>
+          <a href="{{ external.url }}" class="grouped-links__link" target="_blank" rel="noopener noreferrer">
+            {{ 'external-link' | feather | safe }}
+            <span>{{ external.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="inline">
+    {{ favToggle(page.url | htmlBaseUrl ) }}
+    {{ editThisNote(app.editThisNote, page) }}
+  </div>
+</aside>

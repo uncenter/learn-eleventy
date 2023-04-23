@@ -1,0 +1,23 @@
+.app-header {
+  min-block-size: calc(40px + (2 * var(--space-2) + 1px));
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  align-items: center;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  border-block-end: 1px solid var(--color-neutral-line);
+  background-color: var(--color-surface);
+
+  & > * {
+    flex-shrink: 0;
+  }
+}
+
+.app-header__title {
+  flex-shrink: 1;
+  margin-inline-end: var(--space-6);
+  color: var(--color-neutral-textContrast);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}

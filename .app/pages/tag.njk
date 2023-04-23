@@ -1,0 +1,31 @@
+---
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+layout: "layouts/base.njk"
+eleventyComputed:
+  title: "Tag #{{ tag.title }}"
+permalink: /tags/{{ tag.title | slugify }}/
+panel: false
+---
+
+<main class="app-layout__main" id="app-content">
+  <div class="page" data-panel="false">
+    <div class="page__wrapper">
+      <div class="page__main">
+        <h1 class="page__title">#{{ tag.title }}</h1>
+        <ul role="list" class="stack">
+          {% for post in collections[tag.title] | sortByTitle(tag.title) %}
+            <li>
+              <a href="{{ post.url }}" class="note-link">
+                {{ post.data.title or post.page.fileSlug }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>  
+  </div>
+</main>

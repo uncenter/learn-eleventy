@@ -1,0 +1,41 @@
+.grouped-links__label {
+  margin: 0;
+  margin-block-end: var(--space-2);
+  color: var(--color-neutral-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.grouped-links__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grouped-links__link {
+  max-inline-size: 100%;
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--space-1);
+  color: var(--color-neutral-text);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+
+  svg {
+    inline-size: 16px;
+    block-size: 16px;
+    flex-shrink: 0;
+    box-sizing: content-box;
+    padding-inline-end: var(--space-2);
+  }
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover span {
+    text-decoration: underline;
+  }
+}

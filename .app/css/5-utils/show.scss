@@ -1,0 +1,12 @@
+@use "./../1-tokens/breakpoints" as *;
+@use "./../2-lib/breakpoints.scss" as *;
+
+@each $key, $value in $breakpoints {
+  .show-#{$key} {
+    display: none !important;
+
+    @include media-breakpoint-up($key) {
+      display: block !important;
+    }
+  }
+}

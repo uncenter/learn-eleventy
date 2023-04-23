@@ -1,0 +1,42 @@
+{
+  "$schema": ".app/app.schema.json",
+  "title": "Eleventy Notes",
+  "description": "A simple, lightweight, and flexible note-taking template for Eleventy.",
+  "editThisNote": {
+    "url": "https://github.com/rothsandro/eleventy-notes/edit/{{branch}}/{{file}}"
+  },
+  "sidebar": {
+    "links": [
+      {
+        "url": "https://github.com/rothsandro/eleventy-notes",
+        "label": "GitHub / Support",
+        "icon": "github"
+      }
+    ],
+    "notes": [
+      {
+        "pattern": "^/[^/]+$"
+      },
+      {
+        "pattern": "^/Features/",
+        "label": "Features",
+        "expanded": false,
+        "tree": {
+          "replace": {
+            "^/Features": ""
+          }
+        }
+      },
+      {
+        "pattern": "^/Deployment/",
+        "label": "Deployment",
+        "expanded": false
+      },
+      {
+        "pattern": "^/Releases/",
+        "label": "Releases",
+        "expanded": false
+      }
+    ]
+  }
+}

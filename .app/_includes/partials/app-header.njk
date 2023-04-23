@@ -1,0 +1,20 @@
+{% from 'macros/search.njk' import searchInput %}
+
+<header class="app-layout__header app-header" x-data>
+  {% include 'partials/nav-toggle.njk' %}
+
+  <a href="/" class="app-header__title truncate">
+    {{ app.title }}
+  </a>
+
+  <div class="spacer"></div>
+
+  {% include 'partials/theme-switcher.njk' %}
+  
+  <div class="show-md">
+    {{ searchInput('overlay') }}
+  </div>
+  <div class="hide-md">
+    {% include 'partials/search-button.njk' %}
+  </div>
+</header>

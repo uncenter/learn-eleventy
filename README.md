@@ -10,6 +10,7 @@ Content changes should ideally first be raised as issues where they can be discu
 ## To do
 
 - [ ] [Lesson 5](/5.md): Uses passthrough copy to copy static images to the output folder. Consider switching to `eleventy-img`?
+- [ ] All: Remove references of 'modules' and 'sections'; I don't think the lessons were ever divided into those (e.x. [Lesson 16](/16.md)).
 
 ## License (MIT License)
 

@@ -4,7 +4,7 @@ panel: false
 ---
 
 This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
-It is now maintained by [uncenter](https://github.com/uncenter/).
+This fork is now maintained by [uncenter](https://github.com/uncenter/).
 
 ## Contributing
 

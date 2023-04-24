@@ -1,5 +1,5 @@
 ---
-title: 'Getting started'
+title: 'Learn Eleventy'
 ---
 
 Welcome to Learn Eleventy! This course is designed to give you a really solid understanding of [Eleventy](https://www.11ty.dev/)—even if you’ve never used it before. Over the course of **31 lessons**, you’ll start with a completely empty directory and finish with a fancy, fully-fledged website.
@@ -24,4 +24,4 @@ Before we dive in, let's take a quick tour of how to use and navigate this site:
 - Don't forget that you can always refer back to the demo site for inspiration or guidance as you work through the lessons.
 
 Ready? Let's get started!
-Head over to the [first lesson](/lesson/1/) to get started.
+Head over to the first lesson by clicking the "Lesson 1: Introduction" link below.

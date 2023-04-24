@@ -4,7 +4,7 @@ const markdownItTaskCheckbox = require('markdown-it-task-checkbox');
 const markdownItWikilinks = require('markdown-it-wikilinks');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownItContainer = require('markdown-it-container');
-const markdownItKbd = require('markdown-it-kbd');
+const markdownItKbd = require('../other/custom-markdown-it-kbd');
 
 const glob = require('glob');
 const path = require('path');

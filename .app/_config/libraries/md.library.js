@@ -64,7 +64,9 @@ module.exports = (eleventyConfig) => {
 			}),
 		})
 		.use(markdownItContainer, 'tip')
-		.use(markdownItKbd);
+		.use(markdownItKbd, {
+			capitalizeContent: true,
+		});
 
 	return lib;
 };

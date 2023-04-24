@@ -18,8 +18,17 @@ module.exports = function () {
 	if (!fs.existsSync(configPath)) return defaultConfig;
 
 	const customConfig = JSON.parse(fs.readFileSync(configPath));
-	const mergedConfig = mergeConfigs(defaultConfig, customConfig);
-
+	let mergedConfig = mergeConfigs(defaultConfig, customConfig);
+	const date = new Date();
+	const options = {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		hour12: true,
+	};
+	mergedConfig.now = new Intl.DateTimeFormat('en-US', options).format(date);
 	return mergedConfig;
 };
 

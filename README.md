@@ -16,7 +16,9 @@ Content:
 
 Demo:
 
-- [ ] Follow tutorial to make sure it works as expected, generate example repo for each lesson, zip each and link to them from the lesson.
+- [ ] Follow tutorial to make sure it works as expected:
+  - [ ] Generate example repo/folder/branch for each lesson.
+  - [ ] Zip each and link to them from the lesson (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/37).
 
 ## License (MIT License)
 

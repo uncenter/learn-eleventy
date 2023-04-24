@@ -18,7 +18,9 @@ function getGitBranch() {
 	try {
 		// Hide output, we don't want to show an error if it's not a git repo
 		const options = { stdio: 'pipe' };
-		const branch = execSync('git branch --show-current', options).toString().trim();
+		const branch = execSync('git branch --show-current', options)
+			.toString()
+			.trim();
 		return (
 			branch ||
 			process.env.CF_PAGES_BRANCH || // Cloudflare Pages

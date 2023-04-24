@@ -130,8 +130,12 @@ function sortTree(tree) {
 }
 
 function sortTreeBySortProperty(tree) {
-	const customSort = tree.filter((item) => typeof item.note?.data.sort === 'number');
-	const autoSorted = tree.filter((item) => typeof item.note?.data.sort !== 'number');
+	const customSort = tree.filter(
+		(item) => typeof item.note?.data.sort === 'number',
+	);
+	const autoSorted = tree.filter(
+		(item) => typeof item.note?.data.sort !== 'number',
+	);
 
 	return [
 		...customSort.sort((a, b) => {

@@ -37,7 +37,10 @@ Alpine.data('search', () => ({
 				break;
 			case 'ArrowDown':
 				event.preventDefault();
-				this.selectedIndex = Math.min(this.results.length - 1, this.selectedIndex + 1);
+				this.selectedIndex = Math.min(
+					this.results.length - 1,
+					this.selectedIndex + 1,
+				);
 				this.announceSelected();
 				break;
 			case 'Enter':

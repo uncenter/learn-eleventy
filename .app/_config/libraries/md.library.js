@@ -66,7 +66,7 @@ module.exports = (eleventyConfig) => {
 		.use(markdownItContainer, 'tip')
 		.use(markdownItKbd, {
 			transform: (content) => {
-				return content.toUpperCase();
+				return content[0].toUpperCase() + content.slice(1);
 			},
 		});
 	return lib;

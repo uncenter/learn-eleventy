@@ -18,7 +18,7 @@
 	gap: var(--space-8);
 
 	@include media-breakpoint-up('lg') {
-		grid-template-columns: minmax(0, 70ch) 360px;
+		grid-template-columns: minmax(0, 70ch) 200px;
 	}
 }
 

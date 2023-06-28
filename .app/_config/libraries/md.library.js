@@ -65,7 +65,7 @@ module.exports = (eleventyConfig) => {
 		})
 		.use(markdownItContainer, 'tip')
 		.use(markdownItKbd, {
-			presets: [{ name: 'icons', options: { prefix: 'icon:' } }],
+			presets: [{ name: 'icons', prefix: 'icon:' }],
 			transform: (content) => {
 				return content[0].toUpperCase() + content.slice(1);
 			},

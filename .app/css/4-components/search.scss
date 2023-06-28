@@ -25,6 +25,10 @@
 	&::placeholder {
 		color: var(--color-neutral-placeholder);
 	}
+
+	&:focus-visible {
+		outline: var(--color-primary-text) 1px solid;
+	}
 }
 
 .search__popover {

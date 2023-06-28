@@ -14,9 +14,14 @@ panel: true
     </head>
     <body data-theme="system">
         <script>
+            let theme = localStorage.getItem("theme");
+            if (theme === null || !['"light"', '"dark"', '"system"'].includes(theme)) {
+                theme = "system";
+                localStorage.setItem("theme", JSON.stringify(theme));
+            }
             document
                 .body
-                .setAttribute("data-theme", JSON.parse(localStorage.getItem("theme") ?? '"system"'))
+                .setAttribute("data-theme", JSON.parse(theme))
         </script>
         <script>
             window

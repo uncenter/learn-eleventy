@@ -4,7 +4,7 @@
   permalink: function({ page }) {
     const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
     const isRoot = url === "";
-    return isRoot ? "/" : `/n/${url}/`;
+    return isRoot ? "/" : `/lesson/${url}/`;
   }
 }
 ---

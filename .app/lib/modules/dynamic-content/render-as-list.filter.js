@@ -1,5 +1,5 @@
-const ValueParser = require("../../shared").ValueParser;
-const html = require("nanohtml");
+const ValueParser = require('../../shared').ValueParser;
+const html = require('nanohtml');
 
 /**
  * @typedef {object} Options
@@ -15,9 +15,9 @@ const html = require("nanohtml");
  * @returns The HTML code
  */
 module.exports = () => (data, options) => {
-  return html`<ul data-link-list>
-    ${data.map((item) => createItem(item, options))}
-  </ul>`;
+	return html`<ul data-link-list>
+		${data.map((item) => createItem(item, options))}
+	</ul>`;
 };
 
 /**
@@ -27,23 +27,23 @@ module.exports = () => (data, options) => {
  * @returns The HTML code
  */
 function createItem(item, options = {}) {
-  const titleProp = options.titleProp ?? "title";
-  const urlProp = options.urlProp ?? "url";
-  const childrenProp = options.childrenProp ?? "children";
+	const titleProp = options.titleProp ?? 'title';
+	const urlProp = options.urlProp ?? 'url';
+	const childrenProp = options.childrenProp ?? 'children';
 
-  const title = ValueParser.getValueByPath(item, titleProp);
-  const url = ValueParser.getValueByPath(item, urlProp);
-  const children = ValueParser.getValueByPath(item, childrenProp);
-  const content = url ? html`<a href="${url}">${title}</a>` : html`${title}`;
-  const childList = createChildList(children, options);
+	const title = ValueParser.getValueByPath(item, titleProp);
+	const url = ValueParser.getValueByPath(item, urlProp);
+	const children = ValueParser.getValueByPath(item, childrenProp);
+	const content = url ? html`<a href="${url}">${title}</a>` : html`${title}`;
+	const childList = createChildList(children, options);
 
-  return html`<li>${content}${childList}</li>`;
+	return html`<li>${content}${childList}</li>`;
 }
 
 function createChildList(children, options) {
-  if (!Array.isArray(children) || children.length === 0) return null;
+	if (!Array.isArray(children) || children.length === 0) return null;
 
-  return html`<ul>
-    ${children.map((item) => createItem(item, options))}
-  </ul>`;
+	return html`<ul>
+		${children.map((item) => createItem(item, options))}
+	</ul>`;
 }

@@ -1,18 +1,18 @@
-const fs = require("fs");
+const fs = require('fs');
 
 class DefaultIndex {
-  data() {
-    const hasCustomIndex = fs.existsSync("./../index.md");
-    return {
-      title: "Home",
-      permalink: hasCustomIndex ? false : "/",
-      layout: "core/base.layout.njk",
-      panel: false,
-    };
-  }
+	data() {
+		const hasCustomIndex = fs.existsSync('./../index.md');
+		return {
+			title: 'Home',
+			permalink: hasCustomIndex ? false : '/',
+			layout: 'core/base.layout.njk',
+			panel: false,
+		};
+	}
 
-  render() {
-    return `
+	render() {
+		return `
       <div class="page">
         <main class="page__main" id="app-content">
           <h1 class="page__title">Welcome to Eleventy Notes</h1>
@@ -20,7 +20,7 @@ class DefaultIndex {
         </main>
       </div>
     `;
-  }
+	}
 }
 
 module.exports = DefaultIndex;

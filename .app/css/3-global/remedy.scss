@@ -1,19 +1,19 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  margin: 0;
+	margin: 0;
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-neutral-text-contrast);
-  font-family: var(--font-family-default);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	background-color: var(--color-background);
+	color: var(--color-neutral-text-contrast);
+	font-family: var(--font-family-default);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -21,13 +21,13 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input,
 button {
-  font: inherit;
+	font: inherit;
 }
 
 p,
@@ -37,25 +37,25 @@ h3,
 h4,
 h5,
 h6 {
-  scroll-margin-block-start: 6rem;
-  overflow-wrap: break-word;
+	scroll-margin-block-start: 6rem;
+	overflow-wrap: break-word;
 }
 
 small {
-  color: var(--color-neutral-text);
-  font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-fluid-x1);
+	color: var(--color-neutral-text);
+	font-weight: var(--font-weight-normal);
+	font-size: var(--font-size-fluid-x1);
 }
 
 ul[role] {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 hr {
-  block-size: 1px;
-  margin: 0;
-  border: none;
-  background-color: var(--color-neutral-border);
+	block-size: 1px;
+	margin: 0;
+	border: none;
+	background-color: var(--color-neutral-border);
 }

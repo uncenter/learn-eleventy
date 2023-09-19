@@ -1,38 +1,38 @@
 @mixin dark-mode() {
-  color-scheme: dark;
-  --light: ;
-  --dark: initial;
+	color-scheme: dark;
+	--light: ;
+	--dark: initial;
 }
 
 @mixin light-mode() {
-  color-scheme: light;
-  --light: initial;
-  --dark: ;
+	color-scheme: light;
+	--light: initial;
+	--dark: ;
 }
 
 :root {
-  @media (prefers-color-scheme: dark) {
-    @include dark-mode();
-  }
+	@media (prefers-color-scheme: dark) {
+		@include dark-mode();
+	}
 
-  @media (prefers-color-scheme: light) {
-    @include light-mode();
-  }
+	@media (prefers-color-scheme: light) {
+		@include light-mode();
+	}
 
-  &[data-theme="dark"] {
-    @include dark-mode();
-  }
+	&[data-theme='dark'] {
+		@include dark-mode();
+	}
 
-  &[data-theme="light"] {
-    @include light-mode();
-  }
+	&[data-theme='light'] {
+		@include light-mode();
+	}
 }
 
 [data-no-transition] {
-  &,
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
+	&,
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
 }

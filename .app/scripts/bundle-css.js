@@ -1,16 +1,16 @@
-const { Parcel } = require("@parcel/core");
+const { Parcel } = require('@parcel/core');
 
 const args = process.argv.slice(2);
-const isWatchMode = args.includes("--watch");
+const isWatchMode = args.includes('--watch');
 
 let bundler = new Parcel({
-  entries: "css/app.*.scss",
-  mode: isWatchMode ? "development" : "production",
-  defaultConfig: "@parcel/config-default",
+	entries: 'css/app.*.scss',
+	mode: isWatchMode ? 'development' : 'production',
+	defaultConfig: '@parcel/config-default',
 });
 
 if (isWatchMode) {
-  bundler.watch();
+	bundler.watch();
 } else {
-  bundler.run();
+	bundler.run();
 }

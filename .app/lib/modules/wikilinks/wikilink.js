@@ -95,9 +95,7 @@ module.exports = class Wikilink {
 
 		const match =
 			this.notes.find((f) => this.normalizePath(f.filePathStem) === pageName) ||
-			this.notes.find((f) =>
-				this.normalizePath(f.filePathStem).endsWith(`/${pageName}`),
-			);
+			this.notes.find((f) => this.normalizePath(f.filePathStem).endsWith(`/${pageName}`));
 
 		return match;
 	}

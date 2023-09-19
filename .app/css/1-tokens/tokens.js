@@ -35,8 +35,7 @@ module.exports = (theme) => ({
 		'0 0 0 1px var(--color-neutral-border), 0 1px 5px rgba(100, 100, 100, 0.05), 0 0 40px rgba(100, 100, 100, 0.015)',
 	'shadow-lg':
 		'0 0 0 1px var(--color-neutral-border), 0 5px 17px rgba(100, 100, 100, 0.14)',
-	'shadow-xl':
-		'0 4px 12px rgba(100, 100, 100, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
+	'shadow-xl': '0 4px 12px rgba(100, 100, 100, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
 	'shadow-xxl':
 		'0 24px 38px 3px rgba(100, 100, 100, 0.16), 0 9px 86px 8px rgba(100, 100, 100, 0.1), 0 11px 15px -7px rgba(100, 100, 100, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)',
 

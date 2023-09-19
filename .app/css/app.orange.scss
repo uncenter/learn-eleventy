@@ -2,10 +2,9 @@
 // Update it by running "npm run themes:generate"
 
 :root {
-	--font-family-default: ui-sans-serif, system-ui, -apple-system,
-		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
+	--font-family-default: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		'Liberation Mono', 'Courier New', monospace;
 	--font-size-xs: 0.75rem;
@@ -30,15 +29,13 @@
 	--rounded-full: 9999px;
 	--shadow-xs: 0 1px 3px rgba(100, 100, 100, 0.09);
 	--shadow-sm: 0 1px 5px rgba(100, 100, 100, 0.05);
-	--shadow-md: 0 0 0 1px var(--color-neutral-border),
-		0 1px 5px rgba(100, 100, 100, 0.05), 0 0 40px rgba(100, 100, 100, 0.015);
-	--shadow-lg: 0 0 0 1px var(--color-neutral-border),
-		0 5px 17px rgba(100, 100, 100, 0.14);
-	--shadow-xl: 0 4px 12px rgba(100, 100, 100, 0.15),
-		0 0 0 1px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 0 0 1px var(--color-neutral-border), 0 1px 5px rgba(100, 100, 100, 0.05),
+		0 0 40px rgba(100, 100, 100, 0.015);
+	--shadow-lg: 0 0 0 1px var(--color-neutral-border), 0 5px 17px rgba(100, 100, 100, 0.14);
+	--shadow-xl: 0 4px 12px rgba(100, 100, 100, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
 	--shadow-xxl: 0 24px 38px 3px rgba(100, 100, 100, 0.16),
-		0 9px 86px 8px rgba(100, 100, 100, 0.1),
-		0 11px 15px -7px rgba(100, 100, 100, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+		0 9px 86px 8px rgba(100, 100, 100, 0.1), 0 11px 15px -7px rgba(100, 100, 100, 0.1),
+		0 0 0 1px rgba(0, 0, 0, 0.05);
 	--space-0: 0px;
 	--space-1: 4px;
 	--space-2: 8px;
@@ -48,14 +45,12 @@
 	--space-6: 36px;
 	--space-7: 48px;
 	--space-8: 64px;
-	--color-backdrop: var(--light, rgba(0, 0, 0, 0.25))
-		var(--dark, rgba(0, 0, 0, 0.5));
+	--color-backdrop: var(--light, rgba(0, 0, 0, 0.25)) var(--dark, rgba(0, 0, 0, 0.5));
 	--color-background: var(--light, #fff) var(--dark, hsl(60, 6%, 9%));
 	--color-surface: var(--light, #fff) var(--dark, hsl(60, 6%, 9%));
 	--color-primary-bg-subtle: var(--light, hsl(22, 100%, 97.8%))
 		var(--dark, hsl(29, 81.4%, 8.4%));
-	--color-primary-bg: var(--light, hsl(34, 100%, 91.7%))
-		var(--dark, hsl(26, 68.4%, 12%));
+	--color-primary-bg: var(--light, hsl(34, 100%, 91.7%)) var(--dark, hsl(26, 68.4%, 12%));
 	--color-primary-bg-hover: var(--light, hsl(33, 100%, 86.6%))
 		var(--dark, hsl(25, 64.6%, 14.9%));
 	--color-primary-bg-active: var(--light, hsl(31, 100%, 82.2%))
@@ -70,28 +65,24 @@
 		var(--dark, hsl(25, 70.3%, 44.9%));
 	--color-primary-focus-ring: var(--light, hsl(19, 80.1%, 64.5%))
 		var(--dark, hsl(25, 70.3%, 44.9%));
-	--color-primary-bg-solid: var(--light, hsl(24, 94%, 50%))
-		var(--dark, hsl(24, 94%, 50%));
+	--color-primary-bg-solid: var(--light, hsl(24, 94%, 50%)) var(--dark, hsl(24, 94%, 50%));
 	--color-primary-bg-solid-hover: var(--light, hsl(24, 100%, 46.5%))
 		var(--dark, hsl(24, 100%, 58.5%));
-	--color-primary-text: var(--light, hsl(16, 45%, 41.5%))
-		var(--dark, hsl(24, 100%, 70%));
+	--color-primary-text: var(--light, hsl(16, 45%, 41.5%)) var(--dark, hsl(24, 100%, 70%));
 	--color-primary-text-contrast: var(--light, hsl(16, 50%, 23%))
 		var(--dark, hsl(30, 100%, 88%));
 	--color-primary-placeholder: var(--light, hsl(24, 94%, 50%))
 		var(--dark, hsl(24, 94%, 50%));
 	--color-neutral-bg-subtle: var(--light, hsl(60, 7.7%, 97.5%))
 		var(--dark, hsl(60, 1.9%, 10.4%));
-	--color-neutral-bg: var(--light, hsl(59, 5.8%, 94.5%))
-		var(--dark, hsl(56, 2.4%, 15.4%));
+	--color-neutral-bg: var(--light, hsl(59, 5.8%, 94.5%)) var(--dark, hsl(56, 2.4%, 15.4%));
 	--color-neutral-bg-hover: var(--light, hsl(58, 5.3%, 91.8%))
 		var(--dark, hsl(53, 2.7%, 18.4%));
 	--color-neutral-bg-active: var(--light, hsl(57, 5.1%, 89%))
 		var(--dark, hsl(51, 2.9%, 21.2%));
 	--color-neutral-line-weak: var(--light, hsl(57, 5.1%, 89%))
 		var(--dark, hsl(51, 2.9%, 21.2%));
-	--color-neutral-line: var(--light, hsl(56, 5%, 86%))
-		var(--dark, hsl(49, 3.1%, 24.3%));
+	--color-neutral-line: var(--light, hsl(56, 5%, 86%)) var(--dark, hsl(49, 3.1%, 24.3%));
 	--color-neutral-border: var(--light, hsl(54, 4.9%, 81.8%))
 		var(--dark, hsl(47, 3.3%, 28.7%));
 	--color-neutral-border-hover: var(--light, hsl(51, 5%, 72.4%))
@@ -102,8 +93,7 @@
 		var(--dark, hsl(50, 4%, 41.8%));
 	--color-neutral-bg-solid-hover: var(--light, hsl(60, 2.6%, 49%))
 		var(--dark, hsl(48, 3.5%, 49.5%));
-	--color-neutral-text: var(--light, hsl(50, 2.5%, 38%))
-		var(--dark, hsl(50, 5%, 68.3%));
+	--color-neutral-text: var(--light, hsl(50, 2.5%, 38%)) var(--dark, hsl(50, 5%, 68.3%));
 	--color-neutral-text-contrast: var(--light, hsl(50, 8%, 12%))
 		var(--dark, hsl(56, 7%, 93%));
 	--color-neutral-placeholder: var(--light, hsl(60, 3%, 53.9%))

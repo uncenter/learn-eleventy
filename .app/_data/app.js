@@ -2,9 +2,7 @@ const fs = require('fs');
 
 module.exports = function () {
 	const configPath = './../app.json';
-	const custom = fs.existsSync(configPath)
-		? JSON.parse(fs.readFileSync(configPath))
-		: {};
+	const custom = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath)) : {};
 
 	return {
 		title: 'Notes',

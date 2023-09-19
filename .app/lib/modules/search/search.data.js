@@ -121,9 +121,7 @@ export default function (Alpine) {
 				? index.search(termWithoutTags, options)
 				: index.search(options);
 
-			const files = Array.from(
-				new Set(results.flatMap((entry) => entry.result)),
-			);
+			const files = Array.from(new Set(results.flatMap((entry) => entry.result)));
 			const foundNotes = files
 				.map((file) => notes.find((n) => n.url === file))
 				.filter(Boolean);

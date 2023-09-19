@@ -2,10 +2,9 @@
 // Update it by running "npm run themes:generate"
 
 :root {
-	--font-family-default: ui-sans-serif, system-ui, -apple-system,
-		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
+	--font-family-default: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		'Liberation Mono', 'Courier New', monospace;
 	--font-size-xs: 0.75rem;
@@ -30,15 +29,13 @@
 	--rounded-full: 9999px;
 	--shadow-xs: 0 1px 3px rgba(100, 100, 100, 0.09);
 	--shadow-sm: 0 1px 5px rgba(100, 100, 100, 0.05);
-	--shadow-md: 0 0 0 1px var(--color-neutral-border),
-		0 1px 5px rgba(100, 100, 100, 0.05), 0 0 40px rgba(100, 100, 100, 0.015);
-	--shadow-lg: 0 0 0 1px var(--color-neutral-border),
-		0 5px 17px rgba(100, 100, 100, 0.14);
-	--shadow-xl: 0 4px 12px rgba(100, 100, 100, 0.15),
-		0 0 0 1px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 0 0 1px var(--color-neutral-border), 0 1px 5px rgba(100, 100, 100, 0.05),
+		0 0 40px rgba(100, 100, 100, 0.015);
+	--shadow-lg: 0 0 0 1px var(--color-neutral-border), 0 5px 17px rgba(100, 100, 100, 0.14);
+	--shadow-xl: 0 4px 12px rgba(100, 100, 100, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
 	--shadow-xxl: 0 24px 38px 3px rgba(100, 100, 100, 0.16),
-		0 9px 86px 8px rgba(100, 100, 100, 0.1),
-		0 11px 15px -7px rgba(100, 100, 100, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+		0 9px 86px 8px rgba(100, 100, 100, 0.1), 0 11px 15px -7px rgba(100, 100, 100, 0.1),
+		0 0 0 1px rgba(0, 0, 0, 0.05);
 	--space-0: 0px;
 	--space-1: 4px;
 	--space-2: 8px;
@@ -48,8 +45,7 @@
 	--space-6: 36px;
 	--space-7: 48px;
 	--space-8: 64px;
-	--color-backdrop: var(--light, rgba(0, 0, 0, 0.25))
-		var(--dark, rgba(0, 0, 0, 0.5));
+	--color-backdrop: var(--light, rgba(0, 0, 0, 0.25)) var(--dark, rgba(0, 0, 0, 0.5));
 	--color-background: var(--light, #fff) var(--dark, hsl(155, 7%, 9.2%));
 	--color-surface: var(--light, #fff) var(--dark, hsl(155, 7%, 9.2%));
 	--color-primary-bg-subtle: var(--light, hsl(150, 77.8%, 96.5%))
@@ -82,8 +78,7 @@
 		var(--dark, hsl(164, 60%, 40%));
 	--color-neutral-bg-subtle: var(--light, hsl(150, 14.3%, 97.3%))
 		var(--dark, hsl(150, 7.7%, 10.2%));
-	--color-neutral-bg: var(--light, hsl(150, 8%, 94.5%))
-		var(--dark, hsl(151, 5.5%, 15.2%));
+	--color-neutral-bg: var(--light, hsl(150, 8%, 94.5%)) var(--dark, hsl(151, 5.5%, 15.2%));
 	--color-neutral-bg-hover: var(--light, hsl(150, 6%, 92%))
 		var(--dark, hsl(152, 4.7%, 18.3%));
 	--color-neutral-bg-active: var(--light, hsl(150, 4.9%, 89.5%))
@@ -102,8 +97,7 @@
 		var(--dark, hsl(155, 6%, 41.5%));
 	--color-neutral-bg-solid-hover: var(--light, hsl(158, 2.9%, 49.3%))
 		var(--dark, hsl(157, 4.6%, 49.2%));
-	--color-neutral-text: var(--light, hsl(155, 3%, 38.5%))
-		var(--dark, hsl(155, 5%, 68.3%));
+	--color-neutral-text: var(--light, hsl(155, 3%, 38.5%)) var(--dark, hsl(155, 5%, 68.3%));
 	--color-neutral-text-contrast: var(--light, hsl(155, 12%, 11.5%))
 		var(--dark, hsl(155, 7%, 93%));
 	--color-neutral-placeholder: var(--light, hsl(155, 3.5%, 54.2%))

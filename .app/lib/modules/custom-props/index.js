@@ -6,9 +6,6 @@ module.exports = {
 	 * @param {import("@11ty/eleventy").UserConfig} config
 	 */
 	setup(config) {
-		config.addFilter(
-			'resolveCustomProps',
-			this.resolveCustomPropsFilter(config),
-		);
+		config.addFilter('resolveCustomProps', this.resolveCustomPropsFilter(config));
 	},
 };

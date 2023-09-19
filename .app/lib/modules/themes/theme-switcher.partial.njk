@@ -1,0 +1,39 @@
+{% set id = uniqueId() %}
+
+<div role="radiogroup" aria-label="Appearance" class="theme-switcher" x-data x-cloak>
+  <input
+    id="{{ id('light') }}"
+    type="radio"
+    name="appearance"
+    x-model="$store.appearance.theme"
+    value="light"
+    class="visually-hidden"
+  >
+  <label for="{{ id('light') }}" class="theme-switcher__label" aria-label="Light">
+    {{ 'sun' | feather | safe }}
+  </label>
+
+  <input
+    id="{{ id('dark') }}"
+    type="radio"
+    name="appearance"
+    x-model="$store.appearance.theme"
+    value="dark"
+    class="visually-hidden"
+  >
+  <label for="{{ id('dark') }}" class="theme-switcher__label" aria-label="Dark">
+    {{ 'moon' | feather | safe }}
+  </label>
+
+  <input
+    id="{{ id('system') }}"
+    type="radio"
+    name="appearance"
+    x-model="$store.appearance.theme"
+    value="system"
+    class="visually-hidden"
+  >
+  <label for="{{ id('system') }}" class="theme-switcher__label" aria-label="System">
+    {{ 'monitor' | feather | safe }}
+  </label>
+</div>

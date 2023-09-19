@@ -1,0 +1,45 @@
+---
+panel: true
+---
+
+<!doctype html>
+<html lang="en" data-theme="system"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ app.description }}">
+    <title>{{ title or page.fileSlug }}</title>
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="stylesheet" href="/app.{{ app.theme.color }}.css">
+  </head>
+  <body>
+    <script>document.documentElement.setAttribute("data-theme", /"(\w+)"+/.exec(localStorage.getItem("theme"))?.[1] || "system")</script>
+    <script>document.documentElement.classList.add("supports-js")</script>
+    {% include 'shared/skip-link/skip-link.partial.njk' %}
+
+    <div class="app-layout">
+      {% include 'core/app-header.partial.njk' %}
+      <div class="app-layout__wrapper">
+        <div
+          class="app-layout__sidebar"
+          x-data="scrollContainer('app:sidebar')"
+          x-bind="container"
+          :data-open="$store.nav.open.toString()"
+        >
+          <div class="app-layout__sidebar-inner">
+            {% include 'modules/sidebar/sidebar.partial.njk' %}
+          </div>
+        </div>
+        <div>{{ content | safe }}</div>
+      </div>
+    </div>
+
+    <script src="/app.js" data-base="{{ '/' | htmlBaseUrl }}"></script>
+
+    <div aria-hidden="true" hidden>
+      {{ 'hash' | feather({ id: 'icon-hash' }) | safe }}
+      {{ 'file-text' | feather({ id: 'icon-file-text' }) | safe }}
+      {{ 'link' | feather({ id: 'icon-anchor-link', width: "0.8em", height: "0.8em" }) | safe }}
+    </div>
+  </body>
+</html>

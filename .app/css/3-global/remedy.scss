@@ -1,31 +1,19 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-	margin: 0;
-}
-
-html,
-body {
-	height: 100%;
+  margin: 0;
 }
 
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-}
-
-fieldset {
-	border: 0;
-	padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-neutral-text-contrast);
+  font-family: var(--font-family-default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -33,15 +21,13 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
-button,
-textarea,
-select {
-	font: inherit;
+button {
+  font: inherit;
 }
 
 p,
@@ -51,24 +37,25 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  scroll-margin-block-start: 6rem;
+  overflow-wrap: break-word;
 }
 
-#root,
-#__next {
-	isolation: isolate;
+small {
+  color: var(--color-neutral-text);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-fluid-x1);
 }
 
-/* custom */
-
-ul[role='list'] {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+ul[role] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-body {
-	font-family: var(--font-family-default);
-	color: var(--color-neutral-textContrast);
-	background-color: var(--color-background);
+hr {
+  block-size: 1px;
+  margin: 0;
+  border: none;
+  background-color: var(--color-neutral-border);
 }

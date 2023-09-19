@@ -1,0 +1,77 @@
+{% macro searchInput(mode) %}
+  {% set init = "$store.hotkeys.register('/', () => $el.focus())" if mode === 'overlay' else null %}
+  {% set id = uniqueId() %}
+
+  {% if mode === 'inline' %}
+    <noscript>
+      Please enable JavaScript to use the search.
+    </noscript>
+  {% endif %}
+
+  <div x-cloak x-data="search" @click.away="open = false" class="search" data-mode="{{ mode }}">
+    <input
+      type="search"
+      role="combobox"
+      aria-autocomplete="list"
+      aria-haspopup="listbox"
+      aria-owns="{{ id('popup') }}"
+      aria-controls="{{ id('popup') }}"
+      aria-activedescendant
+      aria-expanded="false"
+      :aria-activedescendant="open && selectedId ? `{{ id('result', '') }}${selectedId}` : ''"
+      :aria-expanded="open"
+      placeholder="Search"
+      class="search__input"
+      autocorrect="off"
+      autocapitalize="off"
+      enterkeyhint="search"
+      required
+      x-model="term"
+      x-init="{{ init }}"
+      @focus="open = true"
+      @keydown="onKeyDown"
+      @pageshow.window="term = $el.value"
+      {{ 'autofocus' if mode === 'inline' else '' }}
+    >
+    {% if mode === 'overlay' %}
+      <kbd class="search__kbd" aria-hidden="true">/</kbd>
+      <span class="visually-hidden">Press <kbd>/<kbd> to activate search</span>
+    {% endif %}
+    <template x-if="open{{ '|| true' if mode === 'inline' else '' }}">
+      <div class="search__popover" id="{{ id('popup') }}">
+        <div x-show="!term" class="search__info">
+          Search for notes by title, content and #tags
+        </div>
+        <div x-show="!!term && results && !results.length" class="search__info">
+          No notes found, try a different search term.
+        </div>
+        <div x-show="!!term && !results" class="search__info">
+          Searching...
+        </div>
+
+        <ul x-show="term && results && results.length" class="search__results" role="listbox" aria-label="Search Results">
+          <template x-if="term && results && results.length">
+            <template x-for="(result, index) in results" :key="result.id">
+              <li role="option" :id="`{{ id('result', '') }}${result.id}`">
+                <a
+                  :href="result.url"
+                  class="search__result"
+                  :aria-selected="result.id === selectedId"
+                  x-effect="result.id === selectedId && $el.scrollIntoView({ block: 'nearest' })"
+                  :data-first="index == 0"
+                >
+                  <span class="search__note-title" x-text="result.title"></span>
+                  <span class="search__note-content" x-text="result.previewText" aria-hidden="true"></span>
+                  <span class="search__selected-icon" aria-hidden="true">
+                    {{ 'corner-down-left' | feather | safe }}
+                  </span>
+                </a>
+              </li>
+            </template>
+          </template>
+        </ul>
+      </div>
+    </template>
+  </div>
+
+{% endmacro %}

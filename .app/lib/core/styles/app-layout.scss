@@ -1,0 +1,40 @@
+@use "./../../../css/2-lib/breakpoints" as *;
+
+.app-layout__sidebar {
+  background-color: var(--color-backdrop);
+  overscroll-behavior: contain;
+  z-index: 2;
+
+  &[data-open="false"] {
+    display: none;
+  }
+
+  .supports-js & {
+    position: fixed;
+    inset: 4rem 0 0;
+    overflow: auto;
+  }
+}
+
+.app-layout__sidebar-inner {
+  inline-size: 100%;
+  max-inline-size: 400px;
+  padding-block: var(--space-4);
+  box-shadow: var(--shadow-xxl);
+  background-color: var(--color-surface);
+}
+
+@include media-breakpoint-up("xl") {
+  .app-layout__wrapper {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+
+  .app-layout__sidebar {
+    block-size: calc(100vh - 4rem);
+    display: block !important;
+    position: sticky !important;
+    inset: 4rem 0 0;
+    overflow: auto;
+  }
+}

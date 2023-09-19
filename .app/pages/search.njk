@@ -1,20 +1,15 @@
 ---
 title: Search
-layout: "layouts/base.njk"
+layout: "core/base.layout.njk"
 permalink: "/search/"
 panel: false
 ---
 
-{% from 'macros/search.njk' import searchInput %}
+{% from 'modules/search/search.macro.njk' import searchInput %}
 
-<main class="app-layout__main" id="app-content">
-  <div class="page" data-panel="false">
-    <div class="page__wrapper">
-      <div class="page__main">
-        <h1 class="page__title">Search</h1>
-        {{ searchInput('inline') }}
-      </div>
-    </div>
-  </div>
-</main>
-
+<div class="page">
+  <main class="page__main" id="app-content">
+    <h1 class="page__title">Search</h1>
+    {{ searchInput('inline') }}
+  </main>
+</div>

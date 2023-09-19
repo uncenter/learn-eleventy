@@ -1,0 +1,56 @@
+{% macro sidebarTree(tree, group, page) %}
+  <ul class="nav-list" role="list" aria-labelledby="app:sidebar:section:notes:group:{{ group.id }}:title">
+    {% for item in tree %}
+      <li
+        {% if item.children.length %}
+          x-data="collapsible('app:sidebar:section:notes:group:{{group.id}}:tree:{{item.$treeKey}}', {{ item.$treeExpanded }})"
+        {% endif %}
+      >
+        {% if item.url %}
+          <div class="nav-list__link-with-toggle">
+            <a
+              href="{{ item.url }}"
+              {{ item.url | ariaCurrent(page) }}
+              class="nav-list__link"
+            >
+              <span>{{ item.title }}</span>
+            </a>
+            {% if item.children.length %}
+              <button
+                type="button"
+                class="nav-list__link nav-list__toggle"
+                aria-controls="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
+                aria-expanded="true"
+                :aria-expanded="expanded"
+                @click="toggle()"
+              >
+                {{ 'chevron-right' | feather | safe }}
+                <span class="visually-hidden">
+                  Toggle {{ item.title }}
+                </span>
+              </button>
+            {% endif %}
+          </div>
+        {% else %}
+          <button
+            type="button"
+            class="nav-list__link nav-list__toggle"
+            aria-controls="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
+            aria-expanded="true"
+            :aria-expanded="expanded"
+            @click="toggle()"
+          >
+            <span>{{ item.title }}</span>
+            {{ 'chevron-right' | feather | safe }}
+          </button>
+        {% endif %}
+
+        {% if item.children.length %}
+          <div x-show="expanded" id="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list">
+            {{ sidebarTree(item.children, group, page) }}
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

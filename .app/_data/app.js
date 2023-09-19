@@ -1,48 +1,41 @@
-const fs = require('fs');
-
-const defaultConfig = {
-	title: 'Notes',
-	description: 'Notes app',
-	theme: {
-		color: 'sky',
-	},
-	sidebar: {
-		links: [],
-		notes: [{}],
-	},
-};
+const fs = require("fs");
 
 module.exports = function () {
-	const configPath = './../app.json';
+  const configPath = "./../app.json";
+  const custom = fs.existsSync(configPath)
+    ? JSON.parse(fs.readFileSync(configPath))
+    : {};
 
-	if (!fs.existsSync(configPath)) return defaultConfig;
-
-	const customConfig = JSON.parse(fs.readFileSync(configPath));
-	let mergedConfig = mergeConfigs(defaultConfig, customConfig);
-	const date = new Date();
-	const options = {
-		month: 'long',
-		day: 'numeric',
-		year: 'numeric',
-		hour: 'numeric',
-		minute: 'numeric',
-		hour12: true,
-	};
-	mergedConfig.now = new Intl.DateTimeFormat('en-US', options).format(date);
-	return mergedConfig;
+  return {
+    title: "Notes",
+    description: "Notes app",
+    ...custom,
+    theme: {
+      color: "sky",
+      ...custom.theme,
+    },
+    customProperties: {
+      properties: [],
+      ...custom.customProperties,
+    },
+    sidebar: {
+      links: [],
+      notes: [{}],
+      ...custom.sidebar,
+    },
+    panel: {
+      tableOfContents: true,
+      customProperties: true,
+      tags: true,
+      incomingLinks: true,
+      outgoingLinks: true,
+      externalLinks: true,
+      ...custom.panel,
+    },
+    wikilinks: {
+      autoLabel: "ref",
+      anchorLabel: "none",
+      ...custom.wikilinks,
+    },
+  };
 };
-
-function mergeConfigs(a, b) {
-	return {
-		...a,
-		...b,
-		theme: {
-			...a.theme,
-			...b.theme,
-		},
-		sidebar: {
-			...a.sidebar,
-			...b.sidebar,
-		},
-	};
-}

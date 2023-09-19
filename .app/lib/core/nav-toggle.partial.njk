@@ -1,0 +1,12 @@
+<div class="hide-xl">
+  <button
+    class="icon-btn"
+    :aria-expanded="$store.nav.open"
+    @click="$store.nav.toggle()"
+    x-cloak
+  >
+    <span x-show="!$store.nav.open">{{ 'menu' | feather | safe }}</span>
+    <span x-show="$store.nav.open">{{ 'x' | feather | safe }}</span>
+    <span class="visually-hidden">Menu</span>
+  </button>
+</div>

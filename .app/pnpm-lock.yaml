@@ -17,6 +17,12 @@ dependencies:
   flexsearch:
     specifier: ^0.7.31
     version: 0.7.31
+  markdown-it-container:
+    specifier: ^3.0.0
+    version: 3.0.0
+  markdown-it-kbd-better:
+    specifier: ^1.2.5
+    version: 1.2.5
   prism-themes:
     specifier: ^1.9.0
     version: 1.9.0
@@ -2852,7 +2858,6 @@ packages:
     resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
     dependencies:
       uc.micro: 1.0.6
-    dev: true
 
   /liquidjs@10.9.2:
     resolution: {integrity: sha512-ygPCgYyiFKQNyRi/CK3s3U5RimosBtrIq7TaMYK5ek93mUl9CZ6xxqw2T+1G4kVc9dAmwI71bWLQNKRToV8SsQ==}
@@ -2933,9 +2938,20 @@ packages:
       markdown-it: 13.0.1
     dev: true
 
+  /markdown-it-container@3.0.0:
+    resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
+    dev: false
+
   /markdown-it-footnote@3.0.3:
     resolution: {integrity: sha512-YZMSuCGVZAjzKMn+xqIco9d1cLGxbELHZ9do/TSYVzraooV8ypsppKNmUJ0fVH5ljkCInQAtFpm8Rb3eXSrt5w==}
     dev: true
+
+  /markdown-it-kbd-better@1.2.5:
+    resolution: {integrity: sha512-2L2ilVYinjUAxUwuB2mRlgoqm9iqqt/RAa6XWvto1UNy7CdACINzB0SHMU7IZnweWSOLC8bBj6VARSZIL4GxEw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      markdown-it: 13.0.1
+    dev: false
 
   /markdown-it-task-checkbox@1.0.6:
     resolution: {integrity: sha512-7pxkHuvqTOu3iwVGmDPeYjQg+AIS9VQxzyLP9JCg9lBjgPAJXGEkChK6A2iFuj3tS0GV3HG2u5AMNhcQqwxpJw==}
@@ -2950,7 +2966,6 @@ packages:
       linkify-it: 4.0.1
       mdurl: 1.0.1
       uc.micro: 1.0.6
-    dev: true
 
   /maximatch@0.1.0:
     resolution: {integrity: sha512-9ORVtDUFk4u/NFfo0vG/ND/z7UQCVZBL539YW0+U1I7H1BkZwizcPx5foFv7LCPcBnm2U6RjFnQOsIvN4/Vm2A==}
@@ -2967,7 +2982,6 @@ packages:
 
   /mdurl@1.0.1:
     resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
-    dev: true
 
   /memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
@@ -4094,7 +4108,6 @@ packages:
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
-    dev: true
 
   /uglify-js@3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}

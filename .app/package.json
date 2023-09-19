@@ -39,6 +39,8 @@
 		"alpinejs": "^3.10.5",
 		"feather-icons": "^4.29.0",
 		"flexsearch": "^0.7.31",
+		"markdown-it-container": "^3.0.0",
+		"markdown-it-kbd-better": "^1.2.5",
 		"prism-themes": "^1.9.0"
 	}
 }

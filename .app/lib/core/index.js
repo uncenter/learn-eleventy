@@ -23,6 +23,7 @@ module.exports = {
 		config.addPlugin(syntaxHighlightPlugin);
 		config.addPlugin(pageAssetsPlugin, {
 			mode: 'parse',
+			assetsMatching: '*.png|*.jpg|*.svg|*.gif',
 			postsMatching: '*.md',
 		});
 

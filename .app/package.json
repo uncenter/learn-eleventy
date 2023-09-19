@@ -1,21 +1,17 @@
 {
 	"name": "learn-eleventy",
-	"version": "0.1.0",
-	"description": "",
+	"description": "An updated fork of learneleventyfromscratch.com.",
+	"author": "uncenter <hi@uncenter.dev>",
+	"license": "MIT",
 	"scripts": {
 		"spell": "cspell ../**/*.md",
-		"start": "npm-run-all clean 11ty:serve",
+		"dev": "npm-run-all clean 11ty:serve",
 		"build": "npm-run-all clean 11ty:build",
 		"11ty:serve": "eleventy --serve",
 		"11ty:build": "npm run clean && eleventy",
-		"clean": "rimraf dist"
+		"clean": "rimraf dist",
+		"format": "prettier --write ."
 	},
-	"keywords": [
-		"eleventy",
-		"learneleventyfromscratch"
-	],
-	"author": "uncenter",
-	"license": "MIT",
 	"cspell": {
 		"version": "0.2",
 		"language": "en",
@@ -100,6 +96,15 @@
 			"wordcount"
 		]
 	},
+	"dependencies": {
+		"@alpinejs/persist": "^3.12.2",
+		"@parcel/config-default": "^2.9.3",
+		"alpinejs": "^3.12.2",
+		"feather-icons": "^4.29.0",
+		"flexsearch": "^0.7.31",
+		"hotkeys-js": "^3.10.3",
+		"prism-themes": "^1.9.0"
+	},
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
@@ -121,13 +126,5 @@
 		"sass": "^1.63.6",
 		"string-strip-html": "^8.5.0"
 	},
-	"dependencies": {
-		"@alpinejs/persist": "^3.12.2",
-		"@parcel/config-default": "^2.9.3",
-		"alpinejs": "^3.12.2",
-		"feather-icons": "^4.29.0",
-		"flexsearch": "^0.7.31",
-		"hotkeys-js": "^3.10.3",
-		"prism-themes": "^1.9.0"
-	}
+	"packageManager": "pnpm@8.7.6"
 }

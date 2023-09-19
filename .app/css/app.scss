@@ -3,10 +3,11 @@
 
 @import 'npm:prism-themes/themes/prism-material-light.css';
 
+@import './4-components/grouped-links.scss';
 @import './4-components/icon-btn';
 @import './4-components/note-link';
-@import './4-components/toggle-btn';
 @import './4-components/tip';
+@import './4-components/toggle-btn';
 
 @import './../lib/core/styles';
 @import './../lib/modules/custom-props/styles';

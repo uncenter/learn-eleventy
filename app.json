@@ -13,5 +13,10 @@
 				"icon": "github"
 			}
 		]
+	},
+	"panel": {
+		"incomingLinks": false,
+		"outgoingLinks": false,
+		"externalLinks": false
 	}
 }

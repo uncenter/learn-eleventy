@@ -1,6 +1,6 @@
 const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 const pageAssetsPlugin = require('eleventy-plugin-page-assets');
-const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight');
+const shikijiPlugin = require('./shikiji.plugin');
 
 module.exports = {
 	mdLibrary: require('./md.library'),
@@ -20,11 +20,16 @@ module.exports = {
 		config.setLibrary('md', this.mdLibrary(config));
 
 		config.addPlugin(EleventyHtmlBasePlugin);
-		config.addPlugin(syntaxHighlightPlugin);
 		config.addPlugin(pageAssetsPlugin, {
 			mode: 'parse',
 			assetsMatching: '*.png|*.jpg|*.svg|*.gif',
 			postsMatching: '*.md',
+		});
+		config.addPlugin(shikijiPlugin, {
+			themes: {
+				light: 'vitesse-light',
+				dark: 'vitesse-dark',
+			},
 		});
 
 		config.setServerOptions({

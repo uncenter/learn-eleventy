@@ -1,0 +1,27 @@
+@media (prefers-color-scheme: dark) {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-dark);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-light);
+	}
+}
+
+:root[data-theme='dark'] {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-dark);
+	}
+}
+
+:root[data-theme='light'] {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-light);
+	}
+}

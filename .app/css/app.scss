@@ -1,9 +1,8 @@
 @import './3-global/remedy';
 @import './3-global/theme-mode';
 
-@import 'npm:prism-themes/themes/prism-material-light.css';
-
-@import './4-components/grouped-links.scss';
+@import './4-components/code-blocks';
+@import './4-components/grouped-links';
 @import './4-components/icon-btn';
 @import './4-components/note-link';
 @import './4-components/tip';

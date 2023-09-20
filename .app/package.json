@@ -32,7 +32,7 @@
 		"parcel": "^2.9.3",
 		"sass": "^1.67.0",
 		"shikiji": "^0.6.8",
-		"string-strip-html": "^8.4.0"
+		"string-strip-html": "^8.5.0"
 	},
 	"devDependencies": {
 		"npm-run-all": "^4.1.5",

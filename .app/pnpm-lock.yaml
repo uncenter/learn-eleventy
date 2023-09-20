@@ -60,8 +60,8 @@ dependencies:
     specifier: ^0.6.8
     version: 0.6.8
   string-strip-html:
-    specifier: ^8.4.0
-    version: 8.4.0
+    specifier: ^8.5.0
+    version: 8.5.0
 
 devDependencies:
   npm-run-all:
@@ -4322,8 +4322,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /string-strip-html@8.4.0:
-    resolution: {integrity: sha512-ajjEpk0V1G0+/RrX08I2pSj/kfsYU5wkUKWEKPQJXVQpdahZNSljiuWVqf8UgrB2E9DvFcougbl1gPwHzkuEDg==}
+  /string-strip-html@8.5.0:
+    resolution: {integrity: sha512-5ICsK1B1j0A3AF1d45m0sqQCcmi1Q+t1QpF+b794LO5FTHV+ITkGR5C+UCDJQZgs5LMuRruqr6j48PxQVIurJQ==}
     engines: {node: '>=14'}
     dev: false
 

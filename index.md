@@ -14,7 +14,7 @@ Pretty neat, huh?
 
 Before we dive in, let's take a quick tour of how to use and navigate this site:
 
-- On the left panel, you'll find a navigation menu that allows you to jump to any lesson in the course. At any time, you can press [[alt]] + [[f]] ([[icon:opt]] + [[f]] on MacOS) to open the search menu and search for a lesson by name or content.
+- On the left panel, you'll find a navigation menu that allows you to jump to any lesson in the course. At any time, you can press [[/]] to open the search menu and search for a lesson by name or content.
 - Each lesson is divided into sections and you can navigate to a specific section by clicking on the section title in the table of contents on the right panel.
 - The panel on the right also contains a few other things:
   - A resources section, which contains useful links for all the tools and resources used in the course.

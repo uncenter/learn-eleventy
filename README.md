@@ -8,6 +8,7 @@ This fork is now maintained by [uncenter](https://github.com/uncenter/).
 - 🎈 Built with 11ty (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/28).
 - 🎨 Syntax highlighting!
 - 🔦 Dark/light/system themes.
+- ✅ Up to date! (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/31)
 
 ## Contributing
 

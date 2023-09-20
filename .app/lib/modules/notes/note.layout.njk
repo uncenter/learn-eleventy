@@ -16,6 +16,25 @@
       <div class="article">
         {{ content | safe }}
       </div>
+      <hr>
+    <div class="article__links">
+        {% set nextLesson = page.url | nextLesson %}
+        {% set prevLesson = page.url | prevLesson %}
+        {% if collections.notes[prevLesson] %}
+            <a href="{{ collections.notes[prevLesson].url }}" class="article__link article__link--prev">
+                <span class="article__link-icon">{{ 'arrow-left' | feather | safe }}</span>
+                <span class="article__link-title">{{ collections.notes[prevLesson].data.title }}</span>
+            </a>
+        {% else %}
+            <div class="article__link--empty"></div>
+        {% endif %}
+        {% if collections.notes[nextLesson] %}
+            <a href="{{ collections.notes[nextLesson].url }}" class="article__link article__link--next">
+                <span class="article__link-title">{{ collections.notes[nextLesson].data.title }}</span>
+                <span class="article__link-icon">{{ 'arrow-right' | feather | safe }}</span>
+            </a>
+        {% endif %}
+    </div>
     </article>
   </main>
 

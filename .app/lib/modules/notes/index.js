@@ -4,6 +4,8 @@ module.exports = {
 	notesCollection: require('./notes.collection'),
 	editThisNoteLinkFilter: require('./edit-this-note-link.filter'),
 	sortNotesByTitleFilter: require('./sort-notes-by-title.filter'),
+	nextLesson: require('./next-lesson.filter'),
+	prevLesson: require('./prev-lesson.filter'),
 
 	/**
 	 * Sets up the module.
@@ -16,5 +18,7 @@ module.exports = {
 
 		config.addFilter('editThisNoteLink', this.editThisNoteLinkFilter(config));
 		config.addFilter('sortNotesByTitle', this.sortNotesByTitleFilter(config));
+		config.addFilter('nextLesson', this.nextLesson(config));
+		config.addFilter('prevLesson', this.prevLesson(config));
 	},
 };

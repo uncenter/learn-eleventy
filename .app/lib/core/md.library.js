@@ -4,6 +4,7 @@ const markdownItTaskCheckbox = require('markdown-it-task-checkbox');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownItContainer = require('markdown-it-container');
 const markdownItKbd = require('markdown-it-kbd-better');
+const markdownItCopyCode = require("./../modules/notes/copy-code.md-plugin");
 
 /**
  * Creates a markdown-it instance.
@@ -17,6 +18,7 @@ module.exports = (eleventyConfig) => {
 	})
 		.use(markdownItTaskCheckbox)
 		.use(markdownItFootnote)
+    .use(markdownItCopyCode)
 		.use(markdownItAnchor, {
 			slugify: eleventyConfig.getFilter('slug'),
 			level: [1, 2, 3, 4],

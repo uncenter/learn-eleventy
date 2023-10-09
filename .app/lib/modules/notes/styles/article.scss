@@ -21,8 +21,7 @@
 	}
 
 	pre {
-		margin-block-start: var(--flow-space, 1.5em);
-		margin-block-end: var(--flow-space, 1.5em);
+    margin-block: 0;
 	}
 }
 

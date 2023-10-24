@@ -3,6 +3,8 @@
     <a 
       href="{{ page | editThisNoteLink(config) }}"
       {{ 'target="_blank" rel="noopener"' if config.openInNewTab == true else '' }}
+      data-umami-event="editThisPage"
+      data-umami-event-page="{{ page.url }}"
       class="toggle-btn"
     >
       {{ 'edit-2' | feather({ width: '1em', height: '1em' }) | safe }}

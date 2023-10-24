@@ -46,6 +46,7 @@ export default function (Alpine) {
 			} else {
 				this.items.push(id);
 			}
+			window.umami.track('bookmark', { id: id, status: !this.items.includes(id) });
 		},
 
 		cleanUpBookmarks() {

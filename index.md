@@ -2,6 +2,11 @@
 title: 'Learn Eleventy'
 ---
 
+
+> **Note:**
+> This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
+> This fork is now maintained by [uncenter](https://github.com/uncenter/).
+
 Welcome to Learn Eleventy! This course is designed to give you a really solid understanding of [Eleventy](https://www.11ty.dev/)—even if you’ve never used it before. Over the course of **31 lessons**, you’ll start with a completely empty directory and finish with a fancy, fully-fledged website.
 
 Not only will you have solid skills in Eleventy at the end of this course—you’ll also have skills in semantic HTML, progressive CSS, user experience, accessibility, progressive enhancement and performance. It’s an all-in-one course on building an awesome website!

@@ -30,6 +30,12 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ^5.0.0
         version: 5.0.0
+      '@parcel/config-default':
+        specifier: ^2.13.0
+        version: 2.13.0(@parcel/core@2.13.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
+      '@parcel/core':
+        specifier: ^2.13.0
+        version: 2.13.0(@swc/helpers@0.5.15)
       '@parcel/transformer-sass':
         specifier: ^2.11.0
         version: 2.13.0(@parcel/core@2.13.0(@swc/helpers@0.5.15))
@@ -39,12 +45,18 @@ importers:
       cheerio:
         specifier: ^1.0.0
         version: 1.0.0
+      markdown-it:
+        specifier: ^14.1.0
+        version: 14.1.0
       markdown-it-anchor:
         specifier: ^9.0.1
         version: 9.2.0(@types/markdown-it@14.1.2)(markdown-it@14.1.0)
       markdown-it-footnote:
         specifier: ^4.0.0
         version: 4.0.0
+      markdown-it-kbd-better:
+        specifier: ^1.2.5
+        version: 1.2.5
       markdown-it-task-checkbox:
         specifier: ^1.0.6
         version: 1.0.6
@@ -1393,6 +1405,9 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  linkify-it@4.0.1:
+    resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
+
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
@@ -1434,8 +1449,16 @@ packages:
   markdown-it-footnote@4.0.0:
     resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
 
+  markdown-it-kbd-better@1.2.5:
+    resolution: {integrity: sha512-2L2ilVYinjUAxUwuB2mRlgoqm9iqqt/RAa6XWvto1UNy7CdACINzB0SHMU7IZnweWSOLC8bBj6VARSZIL4GxEw==}
+    engines: {node: '>=16.0.0'}
+
   markdown-it-task-checkbox@1.0.6:
     resolution: {integrity: sha512-7pxkHuvqTOu3iwVGmDPeYjQg+AIS9VQxzyLP9JCg9lBjgPAJXGEkChK6A2iFuj3tS0GV3HG2u5AMNhcQqwxpJw==}
+
+  markdown-it@13.0.2:
+    resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
+    hasBin: true
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -1444,6 +1467,9 @@ packages:
   maximatch@0.1.0:
     resolution: {integrity: sha512-9ORVtDUFk4u/NFfo0vG/ND/z7UQCVZBL539YW0+U1I7H1BkZwizcPx5foFv7LCPcBnm2U6RjFnQOsIvN4/Vm2A==}
     engines: {node: '>=0.10.0'}
+
+  mdurl@1.0.1:
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
 
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
@@ -1922,6 +1948,9 @@ packages:
   type-fest@0.20.2:
     resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
     engines: {node: '>=10'}
+
+  uc.micro@1.0.6:
+    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
@@ -3549,6 +3578,10 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  linkify-it@4.0.1:
+    dependencies:
+      uc.micro: 1.0.6
+
   linkify-it@5.0.0:
     dependencies:
       uc.micro: 2.1.0
@@ -3593,7 +3626,19 @@ snapshots:
 
   markdown-it-footnote@4.0.0: {}
 
+  markdown-it-kbd-better@1.2.5:
+    dependencies:
+      markdown-it: 13.0.2
+
   markdown-it-task-checkbox@1.0.6: {}
+
+  markdown-it@13.0.2:
+    dependencies:
+      argparse: 2.0.1
+      entities: 3.0.1
+      linkify-it: 4.0.1
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
 
   markdown-it@14.1.0:
     dependencies:
@@ -3610,6 +3655,8 @@ snapshots:
       array-union: 1.0.2
       arrify: 1.0.1
       minimatch: 3.1.2
+
+  mdurl@1.0.1: {}
 
   mdurl@2.0.0: {}
 
@@ -4100,6 +4147,8 @@ snapshots:
   tslib@2.8.1: {}
 
   type-fest@0.20.2: {}
+
+  uc.micro@1.0.6: {}
 
   uc.micro@2.1.0: {}
 

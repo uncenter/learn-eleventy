@@ -1,23 +1,28 @@
-const sharedModule = require('./lib/shared');
-const customPropsModule = require('./lib/modules/custom-props');
-const dynamicContentModule = require('./lib/modules/dynamic-content');
-const notesModule = require('./lib/modules/notes');
-const tagsModule = require('./lib/modules/tags');
-const tocModule = require('./lib/modules/toc');
-const wikilinksModule = require('./lib/modules/wikilinks');
-const core = require('./lib/core');
+import { sharedModule } from "./lib/shared/index.js";
+import { customPropsModule } from "./lib/modules/custom-props/index.js";
+import { dynamicContentModule } from "./lib/modules/dynamic-content/index.js";
+import { notesModule } from "./lib/modules/notes/index.js";
+import { searchModule } from "./lib/modules/search/index.js";
+import { sidebarModule } from "./lib/modules/sidebar/index.js";
+import { tagsModule } from "./lib/modules/tags/index.js";
+import { tocModule } from "./lib/modules/toc/index.js";
+import { wikilinksModule } from "./lib/modules/wikilinks/index.js";
+import { assetsModule } from "./lib/modules/assets/index.js";
+import { core } from "./lib/core/index.js";
 
-module.exports = (eleventyConfig) => {
-	sharedModule.setup(eleventyConfig);
+export const config = core.configObj;
 
-	customPropsModule.setup(eleventyConfig);
-	dynamicContentModule.setup(eleventyConfig);
-	notesModule.setup(eleventyConfig);
-	tagsModule.setup(eleventyConfig);
-	tocModule.setup(eleventyConfig);
-	wikilinksModule.setup(eleventyConfig);
+export default function (eleventyConfig) {
+  sharedModule.setup(eleventyConfig);
+  customPropsModule.setup(eleventyConfig);
+  dynamicContentModule.setup(eleventyConfig);
+  notesModule.setup(eleventyConfig);
+  searchModule.setup(eleventyConfig);
+  sidebarModule.setup(eleventyConfig);
+  tagsModule.setup(eleventyConfig);
+  tocModule.setup(eleventyConfig);
+  wikilinksModule.setup(eleventyConfig);
+  assetsModule.setup(eleventyConfig);
 
-	core.setup(eleventyConfig);
-
-	return core.configObj;
-};
+  core.setup(eleventyConfig);
+}

@@ -1,22 +1,23 @@
 .nav-section {
-	margin-block-start: var(--space-7);
-	padding-inline: var(--space-4);
+  margin-block-start: var(--space-7);
+  padding-inline: var(--space-4);
 
-	&:first-of-type,
-	&.nav-section--continued {
-		margin-block-start: var(--space-4);
-	}
+  &:first-of-type,
+  &.nav-section--continued {
+    margin-block-start: var(--space-4);
+  }
 
-	&:last-of-type {
-		margin-block-end: var(--space-4);
-	}
+  &:last-of-type {
+    margin-block-end: var(--space-4);
+  }
 }
 
 .nav-section__title {
-	margin-block-end: var(--space-2);
-	margin-inline-start: var(--space-2);
-	font-size: var(--font-size-sm);
-	color: var(--color-neutral-text);
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
+  margin-block-end: var(--space-2);
+  margin-inline-start: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-text);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }

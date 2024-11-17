@@ -3,15 +3,15 @@ panel: true
 ---
 
 <!doctype html>
-<html lang="en" data-theme="system"> 
+<html lang="{{ app.lang }}" data-theme="system"> 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ app.description }}">
     <title>{{ title or page.fileSlug }}</title>
     <script async src="https://analytik.uncenter.dev/script.js" data-website-id="a54aa25d-49be-48e6-8d84-34657b08aa8b"></script>
-    <link rel="stylesheet" href="/app.{{ app.theme.color }}.css">
-    <meta name="description" content="{{ app.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="stylesheet" href="/app.{{ app.theme.color }}.css">
   </head>
   <body>
     <script>document.documentElement.setAttribute("data-theme", /"(\w+)"+/.exec(localStorage.getItem("theme"))?.[1] || "system")</script>
@@ -39,7 +39,6 @@ panel: true
 
     <div aria-hidden="true" hidden>
       {{ 'hash' | feather({ id: 'icon-hash' }) | safe }}
-      {{ 'file-text' | feather({ id: 'icon-file-text' }) | safe }}
       {{ 'link' | feather({ id: 'icon-anchor-link', width: "0.8em", height: "0.8em" }) | safe }}
       {{ 'copy' | feather({ id: 'icon-copy' }) | safe }}
       {{ 'check' | feather({ id: 'icon-check' }) | safe }}

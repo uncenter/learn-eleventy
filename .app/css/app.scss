@@ -1,27 +1,28 @@
-@import './3-global/remedy';
-@import './3-global/theme-mode';
+@import "./3-global/remedy";
+@import "./3-global/theme-mode";
 @import "./3-global/kbd";
 
-@import './4-components/code-blocks';
-@import './4-components/grouped-links';
-@import './4-components/icon-btn';
-@import './4-components/note-link';
-@import './4-components/tip';
-@import './4-components/toggle-btn';
+@import "./4-components/code-block";
+@import "./4-components/icon-btn";
+@import "./4-components/note-link";
+@import "./4-components/toggle-btn";
 
-@import './../lib/core/styles';
-@import './../lib/modules/custom-props/styles';
-@import './../lib/modules/notes/styles';
-@import './../lib/modules/search/styles';
-@import './../lib/modules/sidebar/styles';
-@import './../lib/modules/tags/styles';
-@import './../lib/modules/themes/styles';
-@import './../lib/modules/toc/styles';
-@import './../lib/shared/styles';
+@import "./../lib/core/styles";
+@import "./../lib/modules/callouts/styles";
+@import "./../lib/modules/custom-props/styles";
+@import "./../lib/modules/notes/styles";
+@import "./../lib/modules/search/styles";
+@import "./../lib/modules/sidebar/styles";
+@import "./../lib/modules/tags/styles";
+@import "./../lib/modules/themes/styles";
+@import "./../lib/modules/toc/styles";
+@import "./../lib/shared/styles";
 
-@import './5-utils/cloak';
-@import './5-utils/hide';
-@import './5-utils/inline';
-@import './5-utils/show';
-@import './5-utils/stack';
-@import './5-utils/visually-hidden';
+@import "./5-utils/cloak";
+@import "./5-utils/hide";
+@import "./5-utils/inline";
+@import "./5-utils/show";
+@import "./5-utils/stack";
+@import "./5-utils/visually-hidden";
+
+@import "./../../app.styles.scss";

@@ -1,34 +1,40 @@
 .theme-switcher {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: var(--rounded-full);
-	padding: 3px;
-	background-color: var(--color-neutral-bg);
-
-	&:has(input:focus-visible) {
-		background-color: var(--color-neutral-bg-hover);
-	}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
 }
 
 .theme-switcher__label {
-	padding: var(--space-2);
-	border-radius: var(--rounded-full);
-	color: var(--color-neutral-text);
-	cursor: pointer;
+  position: relative;
+  padding: var(--space-2);
+  border-radius: var(--rounded-lg);
+  color: var(--color-neutral-text);
+  cursor: pointer;
 
-	&:hover {
-		color: var(--color-neutral-text-contrast);
-		background-color: var(--color-neutral-bg-hover);
-	}
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 100%;
+    z-index: -1;
+    border-radius: var(--rounded-lg);
+    background-color: var(--color-neutral-bg);
+    opacity: 0;
+    transition: all 200ms ease;
+  }
 
-	input:checked + & {
-		box-shadow: var(--shadow-sm);
-		color: var(--color-primary-text);
-		background-color: var(--color-surface);
+  &:hover::after,
+  input:focus-visible + &::after {
+    inset: 0;
+    opacity: 1;
+  }
 
-		svg {
-			fill: var(--color-primary-bg);
-		}
-	}
+  input:checked + & {
+    color: var(--color-primary-text);
+
+    svg {
+      fill: var(--color-primary-bg);
+    }
+  }
 }

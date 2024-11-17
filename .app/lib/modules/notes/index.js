@@ -1,25 +1,23 @@
-module.exports = {
-	_sidebarNotesCollection: require('./_sidebar-notes.collection'),
-	_notesCollection: require('./_notes.collection'),
-	notesCollection: require('./notes.collection'),
-	editThisNoteLinkFilter: require('./edit-this-note-link.filter'),
-	sortNotesByTitleFilter: require('./sort-notes-by-title.filter'),
-  copyCodeMarkdownPlugin: require("./copy-code.md-plugin"),
-	nextLesson: require('./next-lesson.filter'),
-	prevLesson: require('./prev-lesson.filter'),
+import { _notesCollection } from "./_notes.collection.js";
+import { notesCollection } from "./notes.collection.js";
+import { editThisNoteLinkFilter } from "./edit-this-note-link.filter.js";
+import { sortNotesByTitleFilter } from "./sort-notes-by-title.filter.js";
+import { copyCodeMarkdownPlugin } from "./copy-code.md-plugin.js";
 
-	/**
-	 * Sets up the module.
-	 * @param {import("@11ty/eleventy").UserConfig} config
-	 */
-	setup(config) {
-		config.addCollection('_sidebarNotes', this._sidebarNotesCollection(config));
-		config.addCollection('_notes', this._notesCollection(config));
-		config.addCollection('notes', this.notesCollection(config));
+export const notesModule = {
+  _notesCollection,
+  notesCollection,
+  copyCodeMarkdownPlugin,
 
-		config.addFilter('editThisNoteLink', this.editThisNoteLinkFilter(config));
-		config.addFilter('sortNotesByTitle', this.sortNotesByTitleFilter(config));
-		config.addFilter('nextLesson', this.nextLesson(config));
-		config.addFilter('prevLesson', this.prevLesson(config));
-	},
+  /**
+   * Sets up the module.
+   * @param {import("@11ty/eleventy").UserConfig} config
+   */
+  setup(config) {
+    config.addCollection("_notes", this._notesCollection(config));
+    config.addCollection("notes", this.notesCollection(config));
+
+    config.addFilter("editThisNoteLink", editThisNoteLinkFilter(config));
+    config.addFilter("sortNotesByTitle", sortNotesByTitleFilter(config));
+  },
 };

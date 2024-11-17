@@ -1,40 +1,24 @@
 ---js
 {
   layout: "core/base.layout.njk",
-  permalink: function({ page }) {
+  permalink: function({ page, app }) {
     const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
     const isRoot = url === "";
-    return isRoot ? "/" : `/lesson/${url}/`;
+    if (isRoot) return "/";
+
+    const pathPrefix = app.notes.pathPrefix.replace(/^\/|\/$/, '');
+    return `/${[pathPrefix, url].filter(Boolean).join('/')}/`;
   }
 }
 ---
 
-<div class="page">
-  <main class="page__main" id="app-content">
+<div class="page" data-pagefind-body>
+  <main class="page__main" id="app-content" >
     <article>
       <h1 class="page__title">{{ headline or title or page.fileSlug }}</h1>
       <div class="article">
         {{ content | safe }}
       </div>
-      <hr>
-    <div class="article__links">
-        {% set nextLesson = page.url | nextLesson %}
-        {% set prevLesson = page.url | prevLesson %}
-        {% if collections.notes[prevLesson] %}
-            <a href="{{ collections.notes[prevLesson].url }}" class="article__link article__link--prev">
-                <span class="article__link-icon">{{ 'arrow-left' | feather | safe }}</span>
-                <span class="article__link-title">{{ collections.notes[prevLesson].data.title }}</span>
-            </a>
-        {% else %}
-            <div class="article__link--empty"></div>
-        {% endif %}
-        {% if collections.notes[nextLesson] %}
-            <a href="{{ collections.notes[nextLesson].url }}" class="article__link article__link--next">
-                <span class="article__link-title">{{ collections.notes[nextLesson].data.title }}</span>
-                <span class="article__link-icon">{{ 'arrow-right' | feather | safe }}</span>
-            </a>
-        {% endif %}
-    </div>
     </article>
   </main>
 

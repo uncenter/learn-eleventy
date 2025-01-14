@@ -28,9 +28,9 @@
                 :aria-expanded="expanded"
                 @click="toggle()"
               >
-                {{ 'chevron-right' | feather | safe }}
+                {{ 'chevron-right' | icon | safe }}
                 <span class="visually-hidden">
-                  Toggle {{ item.title }}
+                  {{ 'sidebar.nav_item_toggle.label' | t({ title: item.title }) }}
                 </span>
               </button>
             {% endif %}
@@ -45,7 +45,7 @@
             @click="toggle()"
           >
             <span>{{ item.title }}</span>
-            {{ 'chevron-right' | feather | safe }}
+            {{ 'chevron-right' | icon | safe }}
           </button>
         {% endif %}
 

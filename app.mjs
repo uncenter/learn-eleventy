@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, createNotesQuery } from './.app/app-config.js';
+import { defineTranslations } from './.app/app-translations.js';
 
 export default defineConfig({
 	title: 'Learn Eleventy',
@@ -45,5 +46,13 @@ export default defineConfig({
 		incomingLinks: false,
 		outgoingLinks: false,
 		externalLinks: false,
+	},
+});
+
+export const translations = defineTranslations({
+	lang: 'en',
+	partial: true,
+	translations: {
+		'search.popover.placeholder': 'Search for lessons by title and content.',
 	},
 });

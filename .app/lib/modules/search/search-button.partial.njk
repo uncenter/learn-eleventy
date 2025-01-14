@@ -1,4 +1,4 @@
-<a href="/search/" class="icon-btn" lang="en">
-  {{ 'search' | feather | safe }}
-  <span class="visually-hidden">Search</span>
+<a href="/search/" class="icon-btn" lang="{% uiLang %}">
+  {{ 'search' | icon | safe }}
+  <span class="visually-hidden">{{ 'search.action' | t }}</span>
 </a>

@@ -32,7 +32,7 @@ export const markdownLibrary = (eleventyConfig) => {
       permalink: markdownItAnchor.permalink.ariaHidden({
         placement: "after",
         class: "anchor-link",
-        symbol: `<svg width="0.8em" height="0.8em"><use xlink:href="#icon-anchor-link"></use></svg>`,
+        symbol: `<svg><use xlink:href="#icon-anchor-link"></use></svg>`,
       }),
     })
     .use(markdownItKbd, {
@@ -40,7 +40,7 @@ export const markdownLibrary = (eleventyConfig) => {
       transform: (content) => {
         return content[0].toUpperCase() + content.slice(1);
       },
-    });;
+    });
 
   return lib;
 };

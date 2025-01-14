@@ -15,18 +15,18 @@ export default defineConfig({
 		links: [
 			{
 				url: 'https://github.com/uncenter/learn-eleventy',
-				label: 'GitHub',
+				label: 'Learn Eleventy GitHub',
 				icon: 'github',
 			},
 			{
 				url: 'https://discord.gg/GBkBy9u',
 				label: 'Eleventy Discord',
-				icon: 'message-square',
+				icon: 'message-circle-question',
 			},
 			{
 				url: 'https://11ty.dev/docs',
 				label: 'Eleventy Documentation',
-				icon: 'book',
+				icon: 'book-text',
 			},
 		],
 		sections: [

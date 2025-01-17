@@ -1,7 +1,7 @@
 ---
 title: 'Learn Eleventy'
+nextPage: '[[1|Lesson 1: Introduction]]'
 ---
-
 
 > **Note:**
 > This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).

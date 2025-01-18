@@ -1,109 +1,151 @@
-const _colors = require('@radix-ui/colors');
+import _colors from "@radix-ui/colors";
 
 /**
  * @type {Record<keyof typeof _colors, string[]>}
  */
 const colors = Object.fromEntries(
-	Object.entries(_colors).map(([colorName, steps]) => [
-		colorName,
-		// Steps are a map of colors names, like { gray1: "..." }
-		// Turn them into an array [, gray1, gray2, ...] with the first item empty
-		// to make the index match the step number.
-		[, ...Object.values(steps)],
-	]),
+  Object.entries(_colors).map(([colorName, steps]) => [
+    colorName,
+    // Steps are a map of colors names, like { gray1: "..." }
+    // Turn them into an array [, gray1, gray2, ...] with the first item empty
+    // to make the index match the step number.
+    [, ...Object.values(steps)],
+  ])
 );
 
-module.exports = {
-	amber: {
-		primary: { light: colors.amber, dark: colors.amberDark },
-		neutral: { light: colors.sand, dark: colors.sandDark },
-	},
-	blue: {
-		primary: { light: colors.blue, dark: colors.blueDark },
-		neutral: { light: colors.slate, dark: colors.slateDark },
-	},
-	brown: {
-		primary: { light: colors.brown, dark: colors.brownDark },
-		neutral: { light: colors.sand, dark: colors.sandDark },
-	},
-	crimson: {
-		primary: { light: colors.crimson, dark: colors.crimsonDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	cyan: {
-		primary: { light: colors.cyan, dark: colors.cyanDark },
-		neutral: { light: colors.slate, dark: colors.slateDark },
-	},
-	grass: {
-		primary: { light: colors.grass, dark: colors.grassDark },
-		neutral: { light: colors.olive, dark: colors.oliveDark },
-	},
-	green: {
-		primary: { light: colors.green, dark: colors.greenDark },
-		neutral: { light: colors.sage, dark: colors.sageDark },
-	},
-	indigo: {
-		primary: { light: colors.indigo, dark: colors.indigoDark },
-		neutral: { light: colors.slate, dark: colors.slateDark },
-	},
-	iris: {
-		primary: { light: colors.iris, dark: colors.irisDark },
-		neutral: { light: colors.slate, dark: colors.slateDark },
-	},
-	jade: {
-		primary: { light: colors.jade, dark: colors.jadeDark },
-		neutral: { light: colors.sage, dark: colors.sageDark },
-	},
-	lime: {
-		primary: { light: colors.lime, dark: colors.limeDark },
-		neutral: { light: colors.olive, dark: colors.oliveDark },
-	},
-	mint: {
-		primary: { light: colors.mint, dark: colors.mintDark },
-		neutral: { light: colors.sage, dark: colors.sageDark },
-	},
-	orange: {
-		primary: { light: colors.orange, dark: colors.orangeDark },
-		neutral: { light: colors.sand, dark: colors.sandDark },
-	},
-	pink: {
-		primary: { light: colors.pink, dark: colors.pinkDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	plum: {
-		primary: { light: colors.plum, dark: colors.plumDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	purple: {
-		primary: { light: colors.purple, dark: colors.purpleDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	red: {
-		primary: { light: colors.red, dark: colors.redDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	ruby: {
-		primary: { light: colors.ruby, dark: colors.rubyDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	sky: {
-		primary: { light: colors.sky, dark: colors.skyDark },
-		neutral: { light: colors.slate, dark: colors.slateDark },
-	},
-	teal: {
-		primary: { light: colors.teal, dark: colors.tealDark },
-		neutral: { light: colors.sage, dark: colors.sageDark },
-	},
-	tomato: {
-		primary: { light: colors.tomato, dark: colors.tomatoDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	violet: {
-		primary: { light: colors.violet, dark: colors.violetDark },
-		neutral: { light: colors.mauve, dark: colors.mauveDark },
-	},
-	yellow: {
-		primary: { light: colors.yellow, dark: colors.yellowDark },
-		neutral: { light: colors.sand, dark: colors.sandDark },
-	},
+const base = {
+  blue: getColor("blue"),
+  mint: getColor("mint"),
+  green: getColor("green"),
+  orange: getColor("orange"),
+  red: getColor("red"),
+  purple: getColor("purple"),
+  gray: getColor("gray"),
 };
+
+export const themes = {
+  amber: {
+    ...base,
+    primary: getColor("amber"),
+    neutral: getColor("sand"),
+  },
+  blue: {
+    ...base,
+    primary: getColor("blue"),
+    neutral: getColor("slate"),
+  },
+  brown: {
+    ...base,
+    primary: getColor("brown"),
+    neutral: getColor("sand"),
+  },
+  crimson: {
+    ...base,
+    primary: getColor("crimson"),
+    neutral: getColor("mauve"),
+  },
+  cyan: {
+    ...base,
+    primary: getColor("cyan"),
+    neutral: getColor("slate"),
+  },
+  grass: {
+    ...base,
+    primary: getColor("grass"),
+    neutral: getColor("olive"),
+  },
+  green: {
+    ...base,
+    primary: getColor("green"),
+    neutral: getColor("sage"),
+  },
+  indigo: {
+    ...base,
+    primary: getColor("indigo"),
+    neutral: getColor("slate"),
+  },
+  iris: {
+    ...base,
+    primary: getColor("iris"),
+    neutral: getColor("slate"),
+  },
+  jade: {
+    ...base,
+    primary: getColor("jade"),
+    neutral: getColor("sage"),
+  },
+  lime: {
+    ...base,
+    primary: getColor("lime"),
+    neutral: getColor("olive"),
+  },
+  mint: {
+    ...base,
+    primary: getColor("mint"),
+    neutral: getColor("sage"),
+  },
+  orange: {
+    ...base,
+    primary: getColor("orange"),
+    neutral: getColor("sand"),
+  },
+  pink: {
+    ...base,
+    primary: getColor("pink"),
+    neutral: getColor("mauve"),
+  },
+  plum: {
+    ...base,
+    primary: getColor("plum"),
+    neutral: getColor("mauve"),
+  },
+  purple: {
+    ...base,
+    primary: getColor("purple"),
+    neutral: getColor("mauve"),
+  },
+  red: {
+    ...base,
+    primary: getColor("red"),
+    neutral: getColor("mauve"),
+  },
+  ruby: {
+    ...base,
+    primary: getColor("ruby"),
+    neutral: getColor("mauve"),
+  },
+  sky: {
+    ...base,
+    primary: getColor("sky"),
+    neutral: getColor("slate"),
+  },
+  teal: {
+    ...base,
+    primary: getColor("teal"),
+    neutral: getColor("sage"),
+  },
+  tomato: {
+    ...base,
+    primary: getColor("tomato"),
+    neutral: getColor("mauve"),
+  },
+  violet: {
+    ...base,
+    primary: getColor("violet"),
+    neutral: getColor("mauve"),
+  },
+  yellow: {
+    ...base,
+    primary: getColor("yellow"),
+    neutral: getColor("sand"),
+  },
+};
+
+function getColor(name) {
+  return {
+    light: colors[name],
+    lightA: colors[`${name}A`],
+    dark: colors[`${name}Dark`],
+    darkA: colors[`${name}DarkA`],
+  };
+}

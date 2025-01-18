@@ -1,34 +1,38 @@
 .nav-group {
-	&[data-expanded] + .nav-group {
-		margin-block-start: var(--space-6);
-	}
+  &:has(.nav-group__title) {
+    // Space between section title and first group should be increased if labeled.
+    // Will be overwritten for subsequent groups below.
+    margin-block-start: var(--space-3);
+  }
 
-	&:not([data-expanded]) + .nav-group {
-		margin-block-start: var(--space-4);
-	}
-}
+  &[data-expanded] + .nav-group {
+    margin-block-start: var(--space-6);
+  }
 
-.nav-group__subtitle,
-.nav-group__toggle {
-	margin-block-end: var(--space-1);
-	padding-block: 0;
-	padding-inline: var(--space-2);
-	font-size: var(--font-size-xs);
-	color: var(--color-neutral-text);
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
+  &:not([data-expanded]) + .nav-group {
+    margin-block-start: var(--space-4);
+  }
 }
 
 .nav-group__toggle {
-	inline-size: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border: 0;
-	background: transparent;
-	cursor: pointer;
+  margin-block-end: var(--space-2);
+  padding-block: 0;
+  padding-inline: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-text);
+}
 
-	&[aria-expanded='true'] svg {
-		transform: rotate(90deg);
-	}
+.nav-group__toggle {
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  &[aria-expanded="true"] svg {
+    transform: rotate(90deg);
+  }
 }

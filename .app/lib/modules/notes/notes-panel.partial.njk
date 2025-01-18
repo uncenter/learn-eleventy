@@ -4,12 +4,20 @@
 <aside class="stack" data-stack="6">
   {% set toc = content | toc %}
   {% if (toc | length) and app.panel.tableOfContents %}
-  <div class="toc">
-    <h2 class="toc__label" id="app-panel-toc">Table of Contents</h2>
+  <div
+    class="toc"
+    data-pagefind-ignore
+    x-data="toc"
+    x-on:scroll.window.throttle.30ms="onScroll()"
+    :style="indicatorStyles"
+  >
+    <h2 class="toc__label" id="app-panel-toc" lang="{% uiLang %}">
+      {{ 'panel.table_of_contents.label' | t }}
+    </h2>
     <ul class="toc__list" role="list" aria-labelledby="app-panel-toc">
       {% for item in toc %}
       <li style="--level: {{ item.level }}" class="toc__item">
-        <a href="#{{ item.id }}" class="toc__link">
+        <a href="#{{ item.id }}" class="toc__link" :data-active="'{{ item.id }}' === activeId" @click="onNavigate('{{ item.id }}')">
           {{ item.text | safe }}
         </a>
       </li>
@@ -21,7 +29,9 @@
   {% set props = app.customProperties.properties | resolveCustomProps %}
   {% if props | length and app.panel.customProperties %}
   <div class="custom-props">
-    <h2 class="custom-props__label" id="app-panel-props">Properties</h2>
+    <h2 class="custom-props__label" id="app-panel-props" data-pagefind-ignore lang="{% uiLang %}">
+      {{ 'panel.custom_properties.label' | t }}
+    </h2>
     <dl class="custom-props__list stack" data-stack="4" role="list" aria-labelledby="app-panel-props">
       {% for prop in props %}
       <div>
@@ -51,13 +61,18 @@
 
   {% if tags | length and app.panel.tags %}
   <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-tags">Tags</h2>
+    <h2 class="grouped-links__label" id="app-panel-tags" lang="{% uiLang %}">
+      {{ 'panel.tags.label' | t }}
+    </h2>
     <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-tags">
       {% for tag in tags %}
+      {% set tagConfig = collections.tags.byId[tag] %}
       <li>
-        <a href="/tags/{{ tag | slugify }}/" class="grouped-links__link">
-          {{ 'hash' | featherRef | safe }}
-          <span>{{ tag }}</span>
+        <a
+          href="{{ tagConfig.url }}" class="grouped-links__link"
+          data-pagefind-filter="tags:{{ tag }}">
+          {{ 'hash' | iconRef({ width: null, height: null }) | safe }}
+          <span>{{ tagConfig.label }}</span>
         </a>
       </li>
       {% endfor %}
@@ -67,13 +82,15 @@
 
   {% set links = collections._links[page.url]() %}
   {% if links.incoming | length and app.panel.incomingLinks %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-incoming">Incoming</h2>
+  <div class="grouped-links" data-pagefind-ignore>
+    <h2 class="grouped-links__label" id="app-panel-incoming" lang="{% uiLang %}">
+      {{ 'panel.incoming_links.label' | t }}
+    </h2>
     <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-incoming">
       {% for incoming in links.incoming %}
         <li>
           <a href="{{ incoming.url }}" class="grouped-links__link">
-            {{ 'arrow-left' | feather | safe }}
+            {{ 'arrow-left' | icon({ width: null, height: null }) | safe }}
             <span>{{ incoming.title }}</span>
           </a>
         </li>
@@ -83,13 +100,15 @@
   {% endif %}
 
   {% if links.outgoing | length and app.panel.outgoingLinks %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-outgoing">Outgoing</h2>
+  <div class="grouped-links" data-pagefind-ignore>
+    <h2 class="grouped-links__label" id="app-panel-outgoing" lang="{% uiLang %}">
+      {{ 'panel.outgoing_links.label' | t }}
+    </h2>
     <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-outgoing">
       {% for outgoing in links.outgoing %}
         <li>
           <a href="{{ outgoing.url }}" class="grouped-links__link">
-            {{ 'arrow-right' | feather | safe }}
+            {{ 'arrow-right' | icon({ width: null, height: null }) | safe }}
             <span>{{ outgoing.title }}</span>
           </a>
         </li>
@@ -99,13 +118,15 @@
   {% endif %}
   
   {% if links.external | length and app.panel.externalLinks %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-external">External</h2>
+  <div class="grouped-links" data-pagefind-ignore>
+    <h2 class="grouped-links__label" id="app-panel-external" lang="{% uiLang %}">
+      {{ 'panel.external_links.label' | t }}
+    </h2>
     <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-external">
       {% for external in links.external %}
         <li>
           <a href="{{ external.url }}" class="grouped-links__link" target="_blank" rel="noopener noreferrer">
-            {{ 'external-link' | feather | safe }}
+            {{ 'link-2' | icon({ width: null, height: null }) | safe }}
             <span>{{ external.title }}</span>
           </a>
         </li>
@@ -114,26 +135,7 @@
   </div>
   {% endif %}
 
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-resources">Resources</h2>
-    <ul class="grouped-links__list" aria-labelledby="app-panel-resources">
-      <li>
-        <a href="https://11ty.dev/docs" class="grouped-links__link">
-          {{ 'external-link' | feather | safe }}
-          <span>11ty Documentation</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://discord.gg/GBkBy9u" class="grouped-links__link">
-          {{ 'external-link' | feather | safe }}
-          <span>11ty Discord</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-
-  <div class="inline">
+  <div class="inline" data-pagefind-ignore>
     {{ bookmarkToggle(page.url | htmlBaseUrl ) }}
     {{ editThisNote(app.editThisNote, page) }}
   </div>

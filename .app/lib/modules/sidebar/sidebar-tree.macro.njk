@@ -1,9 +1,13 @@
-{% macro sidebarTree(tree, group, page) %}
-  <ul class="nav-list" role="list" aria-labelledby="app:sidebar:section:notes:group:{{ group.id }}:title">
+{% macro sidebarTree(sectionId, tree, group, page, level = 0) %}
+  <ul 
+    class="nav-list"
+    role="list"
+    aria-labelledby="app:sidebar:section:{{ sectionId }}:group:{{ group.id }}:title"
+    style="--nav-list-level:{{ level }}">
     {% for item in tree %}
       <li
         {% if item.children.length %}
-          x-data="collapsible('app:sidebar:section:notes:group:{{group.id}}:tree:{{item.$treeKey}}', {{ item.$treeExpanded }})"
+          x-data="collapsible('app:sidebar:section:{{ sectionId }}:group:{{group.id}}:tree:{{item.$treeKey}}', {{ item.$treeExpanded }})"
         {% endif %}
       >
         {% if item.url %}
@@ -19,14 +23,14 @@
               <button
                 type="button"
                 class="nav-list__link nav-list__toggle"
-                aria-controls="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
+                aria-controls="app:sidebar:section:{{ sectionId }}:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
                 aria-expanded="true"
                 :aria-expanded="expanded"
                 @click="toggle()"
               >
-                {{ 'chevron-right' | feather | safe }}
+                {{ 'chevron-right' | icon | safe }}
                 <span class="visually-hidden">
-                  Toggle {{ item.title }}
+                  {{ 'sidebar.nav_item_toggle.label' | t({ title: item.title }) }}
                 </span>
               </button>
             {% endif %}
@@ -35,19 +39,19 @@
           <button
             type="button"
             class="nav-list__link nav-list__toggle"
-            aria-controls="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
+            aria-controls="app:sidebar:section:{{ sectionId }}:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
             aria-expanded="true"
             :aria-expanded="expanded"
             @click="toggle()"
           >
             <span>{{ item.title }}</span>
-            {{ 'chevron-right' | feather | safe }}
+            {{ 'chevron-right' | icon | safe }}
           </button>
         {% endif %}
 
         {% if item.children.length %}
-          <div x-show="expanded" id="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list">
-            {{ sidebarTree(item.children, group, page) }}
+          <div x-show="expanded" id="app:sidebar:section:{{ sectionId }}:group:{{ group.id }}:tree:{{ item.$treeKey }}:list">
+            {{ sidebarTree(sectionId, item.children, group, page, level + 1) }}
           </div>
         {% endif %}
       </li>

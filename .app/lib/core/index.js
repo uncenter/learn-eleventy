@@ -1,39 +1,32 @@
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
-const pageAssetsPlugin = require('eleventy-plugin-page-assets');
-const shikijiPlugin = require('./shikiji.plugin');
+import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
+import { markdownLibrary } from "./md.library.js";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-module.exports = {
-	mdLibrary: require('./md.library'),
+export const core = {
+  configObj: {
+    pathPrefix: process.env.ELEVENTY_NOTES_PATH_PREFIX || undefined,
+    markdownTemplateEngine: false,
+  },
 
-	configObj: {
-		pathPrefix: process.env.ELEVENTY_NOTES_PATH_PREFIX || undefined,
-		dir: {
-			input: './../',
-			output: 'dist',
-			data: '.app/_data',
-			includes: '.app/lib',
-		},
-		markdownTemplateEngine: false,
-	},
+  /**
+   * Sets up the core.
+   * @param {import("@11ty/eleventy").UserConfig} config
+   */
+  setup(config) {
+    config.setLibrary("md", markdownLibrary(config));
 
-	setup(config) {
-		config.setLibrary('md', this.mdLibrary(config));
+    config.addPlugin(EleventyHtmlBasePlugin);
+    config.addPlugin(syntaxHighlightPlugin);
 
-		config.addPlugin(EleventyHtmlBasePlugin);
-		config.addPlugin(pageAssetsPlugin, {
-			mode: 'parse',
-			assetsMatching: '*.png|*.jpg|*.svg|*.gif',
-			postsMatching: '*.md',
-		});
-		config.addPlugin(shikijiPlugin, {
-			themes: {
-				light: 'vitesse-light',
-				dark: 'vitesse-dark',
-			},
-		});
+    config.setServerOptions({
+      watch: ["dist/app.js", "dist/app.*.css"],
+    });
 
-		config.setServerOptions({
-			watch: ['dist/app.js', 'dist/app.*.css'],
-		});
-	},
+    config.setInputDirectory("./../");
+    config.setOutputDirectory("dist");
+    config.setDataDirectory(".app/_data");
+    config.setIncludesDirectory(".app/lib");
+
+    config.addWatchTarget("./../app.mjs");
+  },
 };

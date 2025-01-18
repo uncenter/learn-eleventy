@@ -1,7 +1,7 @@
-const html = require("nanohtml");
-const raw = require("nanohtml/raw");
+import html from "nanohtml";
+import raw from "nanohtml/raw.js";
 
-module.exports = (md) => {
+export const copyCodeMarkdownPlugin = (md) => {
   md.renderer.rules.code_block = renderCode(md.renderer.rules.code_block);
   md.renderer.rules.fence = renderCode(md.renderer.rules.fence);
 
@@ -23,6 +23,7 @@ module.exports = (md) => {
             x-cloak
             x-data="copyToClipboard()"
             x-bind="copyBtn"
+            lang="en"
           >
             <svg x-show="!copied">
               <use xlink:href="#icon-copy"></use>

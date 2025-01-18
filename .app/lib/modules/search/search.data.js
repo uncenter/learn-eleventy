@@ -1,5 +1,6 @@
-const baseUrl = document.currentScript?.getAttribute('data-base') ?? '/';
-const searchJsonUrl = baseUrl + 'search.json';
+const baseUrl = document.currentScript?.getAttribute("data-base") ?? "/";
+const searchJsonUrl = baseUrl + "search.json";
+const pagefindUrl = baseUrl + "pagefind/pagefind.js";
 
 /**
  * Creates the search data for searching notes.
@@ -7,125 +8,104 @@ const searchJsonUrl = baseUrl + 'search.json';
  * @param {import('alpinejs').Alpine} Alpine The alpine instance.
  */
 export default function (Alpine) {
-	Alpine.data('search', () => ({
-		_notes$: null,
-		_index$: null,
+  Alpine.data("search", () => ({
+    _notes$: null,
+    _pagefind: null,
 
-		open: false,
-		term: '',
-		results: null,
-		selectedId: null,
+    open: false,
+    term: "",
+    results: null,
+    selectedId: null,
 
-		init() {
-			this.$watch('term', async () => {
-				this.results = await this.search();
-				this.open = true;
-				this.selectedId = this.results[0]?.id ?? null;
-			});
-		},
+    init() {
+      this.$watch("term", async () => {
+        const results = await this.search();
 
-		get selectedIdx() {
-			return this.results.findIndex((r) => r.id === this.selectedId);
-		},
+        if (results) {
+          this.results = results;
+          this.open = true;
+          this.selectedId = this.results[0]?.id ?? null;
+        }
+      });
+    },
 
-		selectPrevResult() {
-			const newIdx = Math.max(0, this.selectedIdx - 1);
-			this.selectedId = this.results[newIdx].id;
-		},
+    get selectedIdx() {
+      return this.results.findIndex((r) => r.id === this.selectedId);
+    },
 
-		selectNextResult() {
-			const newIdx = Math.min(this.results.length - 1, this.selectedIdx + 1);
-			this.selectedId = this.results[newIdx].id;
-		},
+    selectPrevResult() {
+      const newIdx = Math.max(0, this.selectedIdx - 1);
+      this.selectedId = this.results[newIdx].id;
+    },
 
-		onKeyDown(event) {
-			switch (event.key) {
-				case 'Escape':
-					this.open = false;
-					break;
-				case 'ArrowUp':
-					event.preventDefault();
-					this.results && this.selectPrevResult();
-					break;
-				case 'ArrowDown':
-					event.preventDefault();
-					this.results && this.selectNextResult();
-					break;
-				case 'Enter':
-					event.preventDefault();
-					const result = this.results?.[this.selectedIdx];
-					if (result) window.location.href = result.url;
-					break;
-			}
-		},
+    selectNextResult() {
+      const newIdx = Math.min(this.results.length - 1, this.selectedIdx + 1);
+      this.selectedId = this.results[newIdx].id;
+    },
 
-		async fetchNotes() {
-			if (!this._notes) {
-				this._notes = new Promise(async (resolve) => {
-					const result = await fetch(searchJsonUrl).then((r) => r.json());
-					resolve(result.notes);
-				});
-			}
-			return this._notes;
-		},
+    onKeyDown(event) {
+      switch (event.key) {
+        case "Escape":
+          this.open = false;
+          break;
+        case "ArrowUp":
+          event.preventDefault();
+          this.results && this.selectPrevResult();
+          break;
+        case "ArrowDown":
+          event.preventDefault();
+          this.results && this.selectNextResult();
+          break;
+        case "Enter":
+          event.preventDefault();
+          const result = this.results?.[this.selectedIdx];
+          if (result) window.location.href = result.url;
+          break;
+      }
+    },
 
-		async buildSearchIndex() {
-			if (!this._index$) {
-				this._index$ = new Promise(async (resolve) => {
-					const FlexSearch = await import('flexsearch');
-					const doc = new FlexSearch.Document({
-						document: {
-							id: 'url',
-							tag: 'tags',
-							index: [
-								{
-									field: 'title',
-									tokenize: 'full',
-									optimize: true,
-									resolution: 9,
-								},
-								{
-									field: 'content',
-									tokenize: 'full',
-									optimize: true,
-									resolution: 5,
-									minlength: 3,
-									context: {
-										depth: 1,
-										resolution: 3,
-									},
-								},
-							],
-						},
-					});
+    async fetchNotes() {
+      if (!this._notes) {
+        this._notes = new Promise(async (resolve) => {
+          const result = await fetch(searchJsonUrl).then((r) => r.json());
+          resolve(result.notes);
+        });
+      }
+      return this._notes;
+    },
 
-					const notes = await this.fetchNotes();
-					notes.forEach((note) => doc.add(note));
-					resolve(doc);
-				});
-			}
+    async loadPagefind() {
+      if (!this._pagefind) {
+        this._pagefind = new Promise(async (resolve) => {
+          // Workaround, waiting for https://github.com/parcel-bundler/parcel/issues/8316
+          const pagefind = await eval(`import("${pagefindUrl}")`);
+          await pagefind.options({ excerptLength: 15 });
+          resolve(pagefind);
+        });
+      }
 
-			return this._index$;
-		},
+      return this._pagefind;
+    },
 
-		async search() {
-			const index = await this.buildSearchIndex();
-			const notes = await this.fetchNotes();
+    async search() {
+      const pagefind = await this.loadPagefind();
 
-			const tagsQuery = this.term.match(/#(\S+)/g) ?? [];
-			const tags = tagsQuery.map((tag) => tag.substring(1));
-			const termWithoutTags = this.term.replace(/#(\S+)/g, '').trim();
+      const tagsQuery = this.term.match(/#(\S+)/g) ?? [];
+      const tags = tagsQuery.map((tag) => tag.substring(1));
+      const termWithoutTags = this.term.replace(/#(\S+)/g, "").trim();
+      const searchTerm = termWithoutTags || null;
+      const filters = tags.length ? { tags } : undefined;
+      const search = await pagefind.debouncedSearch(searchTerm, { filters });
+      if (!search) return null;
 
-			const options = { tag: tags };
-			const results = termWithoutTags
-				? index.search(termWithoutTags, options)
-				: index.search(options);
+      const results = await Promise.all(search.results.map((x) => x.data()));
 
-			const files = Array.from(new Set(results.flatMap((entry) => entry.result)));
-			const foundNotes = files
-				.map((file) => notes.find((n) => n.url === file))
-				.filter(Boolean);
-			return foundNotes;
-		},
-	}));
+      return results.map((x) => ({
+        id: x.url,
+        url: x.url,
+        title: x.meta.title,
+        excerpt: x.excerpt,
+      }));
+    },
+  }));
 }

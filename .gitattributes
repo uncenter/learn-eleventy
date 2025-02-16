@@ -1,1 +1,3 @@
 .app/**/* linguist-vendored
+*.md linguist-detectable
+

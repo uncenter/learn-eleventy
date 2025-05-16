@@ -3,6 +3,7 @@ import markdownItAnchor from "markdown-it-anchor";
 import markdownItTaskCheckbox from "markdown-it-task-checkbox";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItKbd from "markdown-it-kbd-better";
+import markdownItShiki from '@shikijs/markdown-it';
 import { wikilinksModule } from "./../modules/wikilinks/index.js";
 import { notesModule } from "./../modules/notes/index.js";
 import { calloutsModule } from "./../modules/callouts/index.js";
@@ -12,7 +13,7 @@ import { calloutsModule } from "./../modules/callouts/index.js";
  * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
  * @returns The configured markdown library.
  */
-export const markdownLibrary = (eleventyConfig) => {
+export const markdownLibrary = async (eleventyConfig) => {
   const lib = markdownIt({
     html: true,
     linkify: true,
@@ -40,7 +41,20 @@ export const markdownLibrary = (eleventyConfig) => {
       transform: (content) => {
         return content[0].toUpperCase() + content.slice(1);
       },
-    });
+    })
+    .use(
+      await markdownItShiki({
+        langs: ['md', 'json', 'yaml', 'toml', 'sh', 'bash', 'html', 'xml', 'jinja',  'diff', 'scss'],
+        themes: {
+          light: 'catppuccin-latte',
+          dark: 'catppuccin-macchiato',
+        },
+        defaultColor: false,
+        langAlias: { 
+          njk: 'jinja-html',
+        },
+      }),
+  );
 
   return lib;
 };

@@ -2,12 +2,18 @@
   color-scheme: dark;
   --light: ;
   --dark: initial;
+  .shiki, .shiki span {
+    color: var(--shiki-dark) !important;
+  }
 }
 
 @mixin light-mode() {
   color-scheme: light;
   --light: initial;
   --dark: ;
+  .shiki, .shiki span {
+    color: var(--shiki-light) !important;
+  }
 }
 
 :root {

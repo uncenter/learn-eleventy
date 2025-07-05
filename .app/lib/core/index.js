@@ -1,4 +1,3 @@
-import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { markdownLibrary } from "./md.library.js";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
@@ -12,11 +11,10 @@ export const core = {
    * Sets up the core.
    * @param {import("@11ty/eleventy").UserConfig} config
    */
-  setup(config) {
-    config.setLibrary("md", markdownLibrary(config));
+  async setup(config) {
+    config.setLibrary("md", await markdownLibrary(config));
 
     config.addPlugin(EleventyHtmlBasePlugin);
-    config.addPlugin(syntaxHighlightPlugin);
 
     config.setServerOptions({
       watch: ["dist/app.js", "dist/app.*.css"],

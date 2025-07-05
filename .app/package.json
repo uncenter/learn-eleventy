@@ -20,7 +20,6 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@parcel/config-default": "^2.13.3",
     "@parcel/core": "^2.13.3",
     "@parcel/transformer-sass": "^2.13.0",
@@ -39,10 +38,10 @@
     "sass": "^1.81.0"
   },
   "dependencies": {
+    "@shikijs/markdown-it": "^3.4.2",
     "alpinejs": "^3.14.1",
     "lucide": "^0.469.0",
-    "pagefind": "^1.1.0",
-    "prism-themes": "^1.9.0"
+    "pagefind": "^1.1.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

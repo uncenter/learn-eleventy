@@ -50,7 +50,7 @@ export const markdownLibrary = async (eleventyConfig) => {
           dark: 'catppuccin-macchiato',
         },
         defaultColor: false,
-        langAlias: { 
+        langAlias: {
           njk: 'jinja-html',
         },
       }),

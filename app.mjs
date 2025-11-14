@@ -11,7 +11,7 @@ export default defineConfig({
 	staticAssets: {
 		paths: { "static/": "/static/" },
 	},
-	ignores: ["README.md"],
+	ignores: ["README.md", "COPYING.md"],
 	notes: {
 		pathPrefix: '/lesson',
 	},

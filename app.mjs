@@ -9,7 +9,7 @@ export default defineConfig({
 		url: 'https://github.com/uncenter/learn-eleventy/edit/{{branch}}/{{file}}',
 	},
 	staticAssets: {
-		paths: { "static/": "/" },
+		paths: { "static/": "/static/" },
 	},
 	ignores: ["README.md", "COPYING.md"],
 	notes: {

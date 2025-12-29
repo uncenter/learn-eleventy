@@ -28,5 +28,5 @@ export default async function (eleventyConfig) {
   assetsModule.setup(eleventyConfig);
   await translationModule.setup(eleventyConfig);
 
-  core.setup(eleventyConfig);
+  await core.setup(eleventyConfig);
 }

@@ -1,0 +1,7 @@
+<aside class="version-banner" x-data x-bind="WindowScroll" x-show="!$store.versionBanner.hidden">
+  <button aria-label="Close" @click="$store.versionBanner.hide()">
+    <span>{{ 'x' | icon | safe }}</span>
+    <span class="visually-hidden">Close</span>
+  </button>
+  <span>You are on the latest, updated (1/1/2026) version of the Learn Eleventy course. <a href="https://v1.learn-eleventy.pages.dev">Go to previous version.</a></span>
+</aside>

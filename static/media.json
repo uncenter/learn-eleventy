@@ -1,0 +1,47 @@
+
+{
+  "items": [
+    {
+      "alt": "A notepad, mechanical pencil, phone and plant on very brightly lit desk",
+      "large": "https://learn-eleventy.pages.dev/static/notepad_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/notepad_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/notepad_small.jpg",
+      "credit": "https://unsplash.com/photos/bU6JyhSI6zo"
+    },
+    {
+      "alt": "Two screens with bird’s eye shots of evergreen forests as background",
+      "large": "https://learn-eleventy.pages.dev/static/screens_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/screens_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/screens_small.jpg",
+      "credit": "https://unsplash.com/photos/WvuTnXz1hSc"
+    },
+    {
+      "alt": "Man sketching in notepad with laptop and SLR camera in shot on wooden desk",
+      "large": "https://learn-eleventy.pages.dev/static/sketching_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/sketching_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/sketching_small.jpg",
+      "credit": "https://unsplash.com/photos/mGH253KbfaY"
+    },
+    {
+      "alt": "Smiling woman, wearing a blue shirt with an out of focus person in the foreground",
+      "large": "https://learn-eleventy.pages.dev/static/smiling_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/smiling_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/smiling_small.jpg",
+      "credit": "https://unsplash.com/photos/tHO1_OuKbg0"
+    },
+    {
+      "alt": "Studio environment with benches of desks",
+      "large": "https://learn-eleventy.pages.dev/static/studio_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/studio_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/studio_small.jpg",
+      "credit": "https://unsplash.com/photos/Ht9FPY8XLog"
+    },
+    {
+      "alt": "Table tennis table inside a bare-brick room with lots of light",
+      "large": "https://learn-eleventy.pages.dev/static/table-tennis_large.jpg",
+      "medium": "https://learn-eleventy.pages.dev/static/table-tennis_medium.jpg",
+      "small": "https://learn-eleventy.pages.dev/static/table-tennis_small.jpg",
+      "credit": "https://unsplash.com/photos/Ht9FPY8XLog"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import Alpine from "alpinejs";
 
+import versionBannerStore from "../lib/modules/version-banner/version-banner.store";
 import appearanceStore from "../lib/modules/themes/appearance.store";
 import bookmarksStore from "./../lib/modules/bookmarks/bookmarks.store";
 import navStore from "../lib/modules/sidebar/nav.store";
@@ -14,6 +15,7 @@ import tocData from "./../lib/modules/toc/toc.data";
 
 Alpine.plugin(persistPlugin);
 
+versionBannerStore(Alpine)
 appearanceStore(Alpine);
 bookmarksStore(Alpine);
 navStore(Alpine);

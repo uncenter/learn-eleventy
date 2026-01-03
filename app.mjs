@@ -8,6 +8,10 @@ export default defineConfig({
 	editThisNote: {
 		url: 'https://github.com/uncenter/learn-eleventy/edit/{{branch}}/{{file}}',
 	},
+	staticAssets: {
+		paths: { "static/": "/static/" },
+	},
+	ignores: ["README.md", "COPYING.md"],
 	notes: {
 		pathPrefix: '/lesson',
 	},

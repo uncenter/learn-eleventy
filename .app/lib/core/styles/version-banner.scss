@@ -1,6 +1,6 @@
 .version-banner {
     text-align: center;
-    background: #B6E2BC;
+    background: #8DB9E2;
     color: #111110;
     padding: 0.75rem 0.5rem;
 
@@ -13,5 +13,9 @@
         color: currentColor;
         border: none;
         cursor: pointer;
+    }
+
+    a {
+        color: #111110;
     }
 }

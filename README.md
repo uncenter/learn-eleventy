@@ -5,10 +5,13 @@ This fork is now maintained by [uncenter](https://github.com/uncenter/).
 
 ## Features
 
+- ✅ Up to date!
+  - Eleventy v3 and ESM syntax.
+  - Eleventy-native asset pipeline instead of Gulp, using the Eleventy Image plugin and custom template languages.
+  - Date formatting with Luxon instead of Moment.
 - 🎈 Built with 11ty (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/28).
 - 🎨 Syntax highlighting!
 - 🔦 Dark/light/system themes.
-- ✅ Up to date! Fixes/merges https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/31, https://github.com/Andy-set-studio/learneleventyfromscratch.com/pull/23, https://github.com/Andy-set-studio/learneleventyfromscratch.com/pull/36, https://github.com/Andy-set-studio/learneleventyfromscratch.com/pull/29, and https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/11.
 
 ## Contributing
 

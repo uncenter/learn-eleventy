@@ -57,6 +57,8 @@
               href="{{ item.url }}"
               {{ 'target="_blank" rel="noopener"' if item.openInNewTab != false else '' }}
               class="nav-list__link"
+              data-umami-event="Sidebar: {{ item.label }}"
+              data-umami-event-url="{{ item.url }}"
             >
               {{ item.icon | icon | safe }}
               <span>{{ item.label }}</span>
@@ -102,7 +104,7 @@
               <h4 class="nav-group__title" id="app:sidebar:section:{{ section.id }}:group:{{ group.id }}:title">
                 <button
                   type="button"
-                  class="nav-group__toggle" 
+                  class="nav-group__toggle"
                   aria-controls="app:sidebar:section:{{ section.id }}:group:{{ group.id }}:list"
                   aria-expanded="true"
                   :aria-expanded="expanded"
@@ -113,7 +115,7 @@
                 </button>
               </h4>
             {% endif %}
-            <div 
+            <div
               {% if group.label %}x-show="expanded"{% endif %}
               id="app:sidebar:section:{{ section.id }}:group:{{ group.id }}:list">
               {{ sidebarTree(section.id, group.tree, group, page) }}

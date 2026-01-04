@@ -3,11 +3,12 @@
   layout: "core/base.layout.njk",
   permalink: function({ page, app }) {
     const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
-    const isRoot = url === "";
+    const normalized = url.replace(/(^|\/)0+(?=\d)/g, '$1');
+    const isRoot = normalized === "";
     if (isRoot) return "/";
 
     const pathPrefix = app.notes.pathPrefix.replace(/^\/|\/$/, '');
-    return `/${[pathPrefix, url].filter(Boolean).join('/')}/`;
+    return `/${[pathPrefix, normalized].filter(Boolean).join('/')}/`;
   }
 }
 ---

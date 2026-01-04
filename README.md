@@ -17,6 +17,8 @@ This fork is now maintained by [uncenter](https://github.com/uncenter/).
 
 Content changes should ideally first be raised as issues where they can be discussed. Small corrections can be made directly in a pull request.
 
+The site is based on the wonderful [Eleventy Notes](https://eleventy-notes.sandroroth.com/) project by [Sandro Roth](https://sandroroth.com/).
+
 ## Development
 
 1. Clone the repository:

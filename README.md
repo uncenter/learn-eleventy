@@ -36,7 +36,6 @@ Content changes should ideally first be raised as issues where they can be discu
    pnpm start
    ```
 
-
 ## License
 
 [MIT](LICENSE)

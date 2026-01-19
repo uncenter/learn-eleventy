@@ -35,12 +35,59 @@ export default defineConfig({
 		],
 		sections: [
 			{
-				label: 'Lessons',
+				label: 'Module 1: Introduction and basics',
 				groups: [
 					{
-						query: createNotesQuery({
-							pattern: '^/[^/]+$',
-						}),
+						label: "Project setup and templating",
+						query: {
+							filter: [
+								["data.sort", "isLessThanOrEqual", 6],
+							],
+							sort: [["data.sort", "asc"]]
+						}
+					},
+					{
+						label: "Data, collections, and helpers",
+						query: {
+							filter: [
+								["data.sort", "isGreaterThanOrEqual", 7],
+								["data.sort", "isLessThanOrEqual", 16]
+							],
+							sort: [["data.sort", "asc"]]
+						}
+					},
+					{
+						query: {
+							filter: [
+								["data.sort", "isEqual", 17],
+							],
+							sort: [["data.sort", "asc"]]
+						}
+					},
+				]
+			},
+			{
+				label: "Module 2: Asset pipeline and post-processing",
+				groups: [
+					{
+						query: {
+							filter: [
+								["data.sort", "isGreaterThanOrEqual", 18],
+								["data.sort", "isLessThanOrEqual", 21],
+							],
+						}
+					},
+				]
+			},
+			{
+				label: "Module 3: Styling and finishing touches",
+				groups: [
+					{
+						query: {
+							filter: [
+								["data.sort", "isGreaterThanOrEqual", 22],
+							],
+						}
 					},
 				],
 			},

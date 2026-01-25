@@ -15,6 +15,15 @@ export default defineConfig({
 	notes: {
 		pathPrefix: '/lesson',
 	},
+	customProperties: {
+		properties: [
+			{
+				label: "Zip",
+				name: "sort",
+				template: '<a data-umami-event="lessonArchiveDownload" data-umami-event-lesson="{{ value }}" href="https://github.com/uncenter/learn-eleventy-completed/releases/download/rolling-release/{{ value }}.zip">Lesson Archive (download)</a>',
+			},
+		],
+	},
 	sidebar: {
 		links: [
 			{
@@ -105,5 +114,6 @@ export const translations = defineTranslations({
 	partial: true,
 	translations: {
 		'search.popover.placeholder': 'Search for lessons by title and content.',
+		'panel.custom_properties.label': 'Extras'
 	},
 });

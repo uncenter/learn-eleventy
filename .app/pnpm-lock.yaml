@@ -15,8 +15,8 @@ importers:
         specifier: ^3.14.9
         version: 3.14.9
       lucide:
-        specifier: ^0.507.0
-        version: 0.507.0
+        specifier: ^0.552.0
+        version: 0.552.0
       pagefind:
         specifier: ^1.3.0
         version: 1.3.0
@@ -1382,8 +1382,8 @@ packages:
     resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
     engines: {node: 20 || >=22}
 
-  lucide@0.507.0:
-    resolution: {integrity: sha512-UVICRUye/KCV+UKptHbPg0gLH0shrR9qm19Bd7BNDoY52pb7DvJUyw9kNBjI2RxC9hvFqzOSqX5GNpzPnxkkbg==}
+  lucide@0.552.0:
+    resolution: {integrity: sha512-f9PSKLsd4TtGRnRnbqZ2IMKQ2tfCA/dwHaZHysmB3LAF8uRi2GB35iy6S/kjcdvglDrueUdpu50ZDBoB21WT2g==}
 
   luxon@3.7.1:
     resolution: {integrity: sha512-RkRWjA926cTvz5rAb1BqyWkKbbjzCGchDUIKMCUvNi17j6f6j8uHGDV82Aqcqtzd+icoYpELmG3ksgGiFNNcNg==}
@@ -3537,7 +3537,7 @@ snapshots:
 
   lru-cache@11.1.0: {}
 
-  lucide@0.507.0: {}
+  lucide@0.552.0: {}
 
   luxon@3.7.1: {}
 

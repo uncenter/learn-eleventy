@@ -2,8 +2,10 @@ import Alpine from "alpinejs";
 
 import versionBannerStore from "../lib/modules/version-banner/version-banner.store";
 import appearanceStore from "../lib/modules/themes/appearance.store";
+import themeSwitcherData from "../lib/modules/themes/theme-switcher.data";
 import bookmarksStore from "./../lib/modules/bookmarks/bookmarks.store";
 import navStore from "../lib/modules/sidebar/nav.store";
+import panelStore from "./../lib/modules/panel/panel.store";
 import searchData from "./../lib/modules/search/search.data";
 import collapsibleData from "../lib/shared/collapsible.data";
 import hotkeysStore from "../lib/shared/hotkeys.store";
@@ -17,8 +19,10 @@ Alpine.plugin(persistPlugin);
 
 versionBannerStore(Alpine)
 appearanceStore(Alpine);
+themeSwitcherData(Alpine);
 bookmarksStore(Alpine);
 navStore(Alpine);
+panelStore(Alpine);
 searchData(Alpine);
 collapsibleData(Alpine);
 hotkeysStore(Alpine);

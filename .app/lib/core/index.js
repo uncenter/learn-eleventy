@@ -1,5 +1,6 @@
 import { markdownLibrary } from "./md.library.js";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { RenderPlugin } from "@11ty/eleventy";
 import appData from "./../../_data/app.js";
 
 export const core = {
@@ -15,6 +16,7 @@ export const core = {
   async setup(config) {
     config.setLibrary("md", await markdownLibrary(config));
 
+    config.addPlugin(RenderPlugin);
     config.addPlugin(EleventyHtmlBasePlugin);
 
     config.setServerOptions({

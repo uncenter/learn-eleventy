@@ -1,40 +1,53 @@
 .theme-switcher {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
+  position: relative;
 }
 
-.theme-switcher__label {
-  position: relative;
+.theme-switcher__backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+  user-select: none;
+}
+
+.theme-switcher__menu {
+  min-inline-size: 160px;
+  position: absolute;
+  inset-block-start: calc(100% + var(--space-2));
+  inset-inline-end: 0;
+  z-index: 1;
   padding: var(--space-2);
+  box-shadow: var(--shadow-xl);
   border-radius: var(--rounded-lg);
+  background-color: var(--color-surface);
+}
+
+.theme-switcher__menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  border-radius: var(--rounded-md);
+  border: 0;
+  background: transparent;
   color: var(--color-neutral-text);
-  cursor: pointer;
+  text-align: start;
+  font-size: var(--font-size-sm);
+  cursor: default;
+  outline-style: solid;
+  outline-color: transparent;
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 100%;
-    z-index: -1;
-    border-radius: var(--rounded-lg);
+  &[data-focused="true"] {
     background-color: var(--color-neutral-bg);
-    opacity: 0;
-    transition: all 200ms ease;
+    color: var(--color-neutral-text-contrast);
   }
 
-  &:hover::after,
-  input:focus-visible + &::after {
-    inset: 0;
-    opacity: 1;
-  }
-
-  input:checked + & {
+  &[aria-checked="true"] {
     color: var(--color-primary-text);
-
-    svg {
-      fill: var(--color-primary-bg);
-    }
   }
+}
+
+.theme-switcher__menu-item-label {
+  flex-grow: 1;
 }

@@ -4,7 +4,7 @@ nextPage: '[[1|Lesson 1: Introduction]]'
 ---
 
 > [!NOTE]
-> This course was originally authored by [Andy Bell](https://github.com/Andy-set-studio) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
+> This course was originally authored by [Andy Bell](https://bell.bz/) and hosted at [learneleventyfromscratch.com](https://learneleventyfromscratch.com/).
 >
 > This fork is now maintained by [uncenter](https://github.com/uncenter/).
 

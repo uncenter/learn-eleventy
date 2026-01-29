@@ -12,12 +12,15 @@ This fork is now maintained by [uncenter](https://github.com/uncenter/).
 - 🎈 Built with 11ty (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/28).
 - 🎨 Syntax highlighting!
 - 🔦 Dark/light/system themes.
+- 💾 Completed lesson archives for the entire course (https://github.com/Andy-set-studio/learneleventyfromscratch.com/issues/37).
 
 ## Contributing
 
 Content changes should ideally first be raised as issues where they can be discussed. Small corrections can be made directly in a pull request.
 
 The site is based on the wonderful [Eleventy Notes](https://eleventy-notes.sandroroth.com/) project by [Sandro Roth](https://sandroroth.com/).
+
+Changes made to content that affect the project result are matched by updating the completed lesson tracker commits at [uncenter/learn-eleventy-completed](https://github.com/uncenter/learn-eleventy-completed).
 
 ## Development
 

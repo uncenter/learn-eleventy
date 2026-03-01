@@ -41,6 +41,12 @@ Changes made to content that affect the project result are matched by updating t
    pnpm start
    ```
 
+### Screenshots
+
+Many of the pre-existing screenshots were historically taken using Cleanshot X, with the window wallpaper background enabled, of an unknown browser.
+
+The procedure for *new or replacement screenshots*, going forward, is to also use Cleanshot X — with the window wallpaper enabled, set to plain white, and with level two padding (the option between min and default) — for screenshots in window mode of the [Confectionary](https://confectioneryapp.com/) special-purpose browser — in (system) dark mode with the traffic lights and address bar enabled.
+
 ## License
 
 [MIT](LICENSE)

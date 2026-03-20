@@ -9,7 +9,7 @@ Not only will you have solid skills in Eleventy at the end of this course—you�
 
 In fact, why explain what we’re building when I can just show you?
 
-<a href="https://issue33.learneleventy.dev">View the demo!</a>
+[View the demo!](https://issue33.learneleventy.dev)
 
 Pretty neat, huh?
 

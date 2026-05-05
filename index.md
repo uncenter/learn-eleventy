@@ -5,6 +5,9 @@ nextPage: '[[1|Lesson 1: Introduction]]'
 
 Welcome to Learn Eleventy! This course is designed to give you a really solid understanding of [Eleventy](https://www.11ty.dev/)—even if you’ve never used it before. Over the course of **31 lessons**, you’ll start with a completely empty directory and finish with a fancy, fully-fledged website.
 
+> [!NOTE]
+> _This course is based on [Andy Bell](https://bell.bz/)'s original ["Learn Eleventy from Scratch"](https://learneleventyfromscratch.com/) course._
+
 Not only will you have solid skills in Eleventy at the end of this course—you’ll also have skills in semantic HTML, progressive CSS, user experience, accessibility, progressive enhancement and performance. It’s an all-in-one course on building an awesome website!
 
 In fact, why explain what we’re building when I can just show you?
